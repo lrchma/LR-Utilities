@@ -1,7 +1,15 @@
-﻿<#GetFiles
+﻿<#
 
-#Version 0.1 - June 2017
+.NAME
+NetMon-API
 
+.SYNOPSIS
+Wrapper for interacting with the LogRhythm NetMon API
+
+.DESCRIPTION
+
+
+.EXAMPLE
 LIST APPLICATIONS
 .\NetMon.ps1 -path "/applications" -method "GET" 
 
@@ -19,28 +27,39 @@ GET SESSION
 
 GET SESSION FILES
 .\NetMon.ps1 -path "/session/577c3ef6-cca3-41d7-a4cd-81783dfbd292/files" -session "577c3ef6-cca3-41d7-a4cd-81783dfbd292" -method "GET" -outFile "files.zip"
+
+.PARAMETER action
+
+
+.NOTES
+June 2017 @chrismartin
+
+.LINK
+https://github.com/lrchma/
+
 #>
+
 
 
 param(
 
 [Parameter(Mandatory=$false)]
-[string]$acctname = 'chris.martin',
+[string]$acctname = '',
 
 [Parameter(Mandatory=$false)]
-[string]$password = 'adad5ca356c0bd10da0536798fbec8fdd79d02cc1ebfece809419a955d37a4b1',
+[string]$password = '',
 
 [Parameter(Mandatory=$false)]
-[string]$url = 'https://192.168.3.198/api',
+[string]$url = '',
 
 [Parameter(Mandatory=$false)]
-[string]$path ='/services/capture',
+[string]$path ='',
 
 [Parameter(Mandatory=$false)]
-[string]$method = 'get',
+[string]$method = '',
 
 [Parameter(Mandatory=$false)]
-[string]$session = '577c3ef6-cca3-41d7-a4cd-81783dfbd292',
+[string]$session = '',
 
 #Not currently used.  Think on this as otherwise changes require two SRs.
 [Parameter(Mandatory=$false)]
@@ -54,7 +73,6 @@ param(
 
 [Parameter(Mandatory=$false)]
 [string]$ignoreCert = 'true'
-
 
 )
 
