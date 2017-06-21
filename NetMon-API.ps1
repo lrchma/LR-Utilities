@@ -3,40 +3,45 @@
 .NAME
 NetMon-API
 
+
 .SYNOPSIS
-Wrapper for interacting with the LogRhythm NetMon API
+Wrapper for interacting with the LogRhythm NetMon API, and used for LogRhythm SmartResponse.
+
 
 .DESCRIPTION
+Known brokeness:
+* Configure Capture Method current does not work
+* multiple arguments are not support, e.g., adding more than one application for capture at a time
+
 
 
 .EXAMPLE
 LIST APPLICATIONS
-.\NetMon.ps1 -path "/applications" -method "GET" 
+.\NetMon.ps1 -url "https://1.2.3.4" -acctname "bob" -password "GUID" -path "/applications" -method "GET" 
 
 DOWNLOAD PCAP
-.\NetMon.ps1 -path "/pcap/action/download" -method "POST" -Outfile "test2" -session "577c3ef6-cca3-41d7-a4cd-81783dfbd292" 
+.\NetMon.ps1 -url "https://1.2.3.4" -acctname "bob" -password "GUID" -path "/pcap/action/download" -method "POST" -Outfile "test2" -session "577c3ef6-cca3-41d7-a4cd-81783dfbd292" 
 
 RESTART NETMON SERVICES
-.\NetMon.ps1 -path "/services/actions/restart" -method "PUT" 
+.\NetMon.ps1 -url "https://1.2.3.4" -acctname "bob" -password "GUID" -path "/services/actions/restart" -method "PUT" 
 
 GET CAPTURE STATE
-.\NetMon.ps1 -path "/services/capture" -method "GET"
+.\NetMon.ps1 -url "https://1.2.3.4" -acctname "bob" -password "GUID" -path "/services/capture" -method "GET"
 
 GET SESSION
-.\NetMon.ps1 -path "/session/577c3ef6-cca3-41d7-a4cd-81783dfbd292" -session "577c3ef6-cca3-41d7-a4cd-81783dfbd292" -method "GET"
+.\NetMon.ps1 -url "https://1.2.3.4" -acctname "bob" -password "GUID" -path "/session/577c3ef6-cca3-41d7-a4cd-81783dfbd292" -session "577c3ef6-cca3-41d7-a4cd-81783dfbd292" -method "GET"
 
 GET SESSION FILES
-.\NetMon.ps1 -path "/session/577c3ef6-cca3-41d7-a4cd-81783dfbd292/files" -session "577c3ef6-cca3-41d7-a4cd-81783dfbd292" -method "GET" -outFile "files.zip"
+.\NetMon.ps1 -url "https://1.2.3.4" -acctname "bob" -password "GUID" -path "/session/577c3ef6-cca3-41d7-a4cd-81783dfbd292/files" -session "577c3ef6-cca3-41d7-a4cd-81783dfbd292" -method "GET" -outFile "files.zip"
 
 
 .PARAMETER 
-
 
 $acctname -> Netmon username
 
 $password -> Netmon user's API key (not their password!)
 
-$url -> Base NetMon URL, e.g., 'https://netmon/'. Include trailing slash.
+$url -> Base NetMon URL, e.g., 'https://netmon/'. Don't include trailing slash.
 
 $path -> The NetMon method, e.g., /services/capture.  Don't include trailing slash.
 
@@ -145,7 +150,8 @@ if($ignoreCert = "true"){
 
 ##########################################################################################
 <#
-Each PUT or POST method requires a custom Body payload for the matching Object type
+Each PUT or POST method requires a custom Body payload for the matching Object type.
+TODO: Make into a function, but also add some ability to deal with array of inputs via params
 #>
 
 #addCapturedApplications
