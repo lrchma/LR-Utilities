@@ -28,7 +28,29 @@ GET SESSION
 GET SESSION FILES
 .\NetMon.ps1 -path "/session/577c3ef6-cca3-41d7-a4cd-81783dfbd292/files" -session "577c3ef6-cca3-41d7-a4cd-81783dfbd292" -method "GET" -outFile "files.zip"
 
-.PARAMETER action
+
+.PARAMETER 
+
+
+$acctname -> Netmon username
+
+$password -> Netmon user's API key (not their password!)
+
+$url -> Base NetMon URL, e.g., 'https://netmon/'. Include trailing slash.
+
+$path -> The NetMon method, e.g., /services/capture.  Don't include trailing slash.
+
+$method -> GET, PUT OR POST.  Must match $path being called.
+
+$session -> Used for PCAP download or individual session(s) retrival
+
+$applychangesnow -> Not used.  Will provide ability to apply changes, i.e., restart services automatically
+
+$application -> The netmon application name, .e.g., http, pandora, smtp
+
+$outFile -> output filename for PCAP(s) or File(s)., e.g., "file.zip".
+
+$ignoreCert -> If using a default self-signed cert then use this
 
 
 .NOTES
