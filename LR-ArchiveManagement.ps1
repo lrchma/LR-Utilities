@@ -11,7 +11,10 @@ Utility to manage LogRhythm Archives files
 
 
 .DESCRIPTION
+
+100% unofficial.  If it were possible to have more than 100% it'd be in that range!
 LogRhythm, by default, doesn't delete Inactive Archives, ever!  For storage or compliance reasons you may wish to automatically delete or move InactiveArchives after a certain period. 
+
 
 The Get-LR-Archives function enables you to do just that.   
 
