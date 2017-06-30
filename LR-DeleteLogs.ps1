@@ -1,3 +1,17 @@
+<#
+.NAME
+LR-DeleteLogs
+
+
+.SYNOPSIS
+LogRhythm generated log files can consume a large amount of disk space.  To ensure they don't consume all the available disk you can use this script manually or via a scheduled task to keep them disks full of space.
+
+
+.DESCRIPTION
+100% unofficial.  If it were possible to have more than 100% it'd be in that range!
+
+#>
+
 param(
   [Parameter(Mandatory=$false)]
   [string]$testMode = "true",
@@ -84,16 +98,16 @@ if($testMode -eq "true"){
 }
  catch [System.UnauthorizedAccessException]
     {
-        Write-Output "Unauthorized Access Exception: $logFile.  Most likely the folder path does not exist."
+        Write-Output "Unauthorized Access Exception: $logFile.  You shouldn't be here, but perhaps the folder path doesn't exist."
         Continue
     }
 catch [System.IO.IOException]
 {
-        Write-Output "File In Use Exception: $item.Name"
+        Write-Output "File In Use Exception: $item.Name.  Processes happen."
         Continue
 }
 catch {
-        Write-Output "Exception: $_.Exception"
+        Write-Output "Exception: $_.Exception.  Well, this is awkward..."
 }
 Finally
 {
