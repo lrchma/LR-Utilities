@@ -1,8 +1,45 @@
-﻿$userId=1                        #this needs be the ID of the user logged in, e.g., 1 is logrhythmadmin
-$aieRuleID=1200                     #the upper limit for AIE rules to check for.  In built rules go up to 1200 as of time of writing
+﻿param(
+  [Parameter(Mandatory=$false)]
+  [int]$userId = 1,
+  [Parameter(Mandatory=$false)]
+  [int]$aieStartRuleNo = 1,
+  [Parameter(Mandatory=$false)]
+  [int]$aieStopRuleNo = 1200
+)
 
 
-for($i=1; $i -le $aieRuleID; $i++)
+function CalcRBP($risk,$fpp){
+
+    switch($risk){
+        1 { $b = 37 }
+        2 { $b = 44 }
+        3 { $b = 52 }
+        4 { $b = 60 }
+        5 { $b = 68 }
+        6 { $b = 76 }
+        7 { $b = 84 }
+        8 { $b = 92 }
+        9 { $b = 100 }
+    }
+
+    switch($fpp){
+        'None' { $a = 0 }
+        'LowLow' { $a = 3 }
+        'LowMedium' { $a = 6 }
+        'LowHigh' { $a = 9 }
+        'MediumLow' { $a = 1 }
+        'MediumMedium' { $a = 15 }
+        'MediumHigh' { $a = 18 }
+        'HighLow' { $a = 21 }
+        'HighMedium' { $a = 24 }
+        'HighHigh' { $a = 27 }
+    }
+
+$result = $b - $a
+return "$result"
+}
+
+for($i=$aieStartRuleNo; $i -le $aieStopRuleNo; $i++)
 {
     try {
         $rs = Invoke-WebRequest -Uri http://localhost:8505/lr-services-host-api/actions/domainobject -ContentType "application/json" -Method POST -Body "{source : '',destination : 'DomainObjectService',messageType : 'GetObjectRequest',ver: 1, data: {objectType : 'AieRule', userId : 1, objectId : $i,}, }"
@@ -11,15 +48,16 @@ for($i=1; $i -le $aieRuleID; $i++)
         write-output "--------------------------------------------------------------------------------"
         foreach($object in $psObject){
             "+ Rule Name: {0}" -f $object.alarmRule.name
-            "`t- ID: {0}" -f $object.alarmRule.id
+            "`t- ID: {0}" -f $object.id
             "`t- Enabled: {0}" -f $object.alarmRule.enabled
             "`t- Group: {0}" -f $object.ruleGroup
             "`t- Description: `"{0}`"" -f $object.description
             "`t- Details: `"{0}`"" -f $object.details
-            "`t- Suppression: {0}" -f $object.supression
+            "`t- Suppression: {0}" -f $object.supression -replace ".{3}$"
             "`t- Alarm: {0}" -f $object.eventForwardingEnabled
-            "`t- Risk Rating: {0}" -f $object.runtimePriority.id
+            "`t- Risk Rating: {0}" -f $object.commonEvent.riskRating
             "`t- FPP: {0}" -f $object.falsePositiveProbability.id
+            "`t- Estimated RBP: {0}" -f (CalcRBP $object.commonEvent.riskRating $object.falsePositiveProbability.name)
 
             foreach($block in $object.blocks){
                 "`t+ Block {0}:" -f $block.id
@@ -30,16 +68,17 @@ for($i=1; $i -le $aieRuleID; $i++)
                         
                         write-output "`t`t+ Field Filters:"
                         foreach($value in $criteria.fieldFilters){
-                            $value.values.ForEach{"`t`t`t- $($_.displayValue)"}
-                            #$value.values.ForEach{"`t`t`t- $($_.displayValue), FilterType: $($_.filterType),  valueType: $($_.valueType), value: $($_.value),"}
+                            $value.values.ForEach{"`t`t`t- $($value.name) : $($_.displayValue)"}
                         }
                     }
 
+                    #Needs testing, yet to find default AIE rules that use include/excludes
                     foreach($filterIn in $block.filterIn){
                         write-output $fitlerIn
                     }
 
 
+                    #Needs testing, yet to find default AIE rules that use include/excludes
                     foreach($filterOut in $block.filterIn){
                         write-output $fitlerOut
                     }
@@ -50,27 +89,27 @@ for($i=1; $i -le $aieRuleID; $i++)
                         "`t`t`t- Field: {0}"   -f$group.name
                     }
 
+                    write-output "`t`t+ Threshold Values:"
+                    write-output $block.values.ForEach{"`t`t`t- Field: $($_.field.name) => $($_.count)"}
+
                     write-output "`t`t+ Block Relationships"
                     foreach($relationship in $block.blockRelationship){
                         $relationship.fieldRelationships.ForEach{"`t`t`t- fieldName: $($_.currentBlockField.name)"}
-                        #$relationship.fieldRelationships.ForEach{"`t`t`t- fieldName: $($_.currentBlockField.name), FilterType: $($_.fieldOperator.name),  valueType: $($_.prioerBlockType)"}
                     }
             }
-            #Go easy on the API
-            write-host $object.alarmRule.id
+            #Go easy on the API, not really needed, and echo the current rule to see how far along things are
+            write-host $object.id
             start-sleep -m 100
 
         }
 
-        #$rs.Content | convertfrom-json | convertto-json -depth 10 | Add-Content $outPutFile\$i-AIERule.json  
-              
+             
     }
     catch [System.Net.WebException]
     {
-         #HTTP response code 500, i.e., no matching AIE Rule ID.   
+         #HTTP response code 500, i.e., no matching AIE Rule ID 
     }
     catch{
         $_
     }
 }
-

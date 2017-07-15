@@ -1,0 +1,6 @@
+The LR-AIERuleExport.ps1 enables you do export all enabled AIE Rules from a LogRhythm 7.2.x + installation.
+
+The script needs be run from the PM component and requires an existing logon session to the WebUI be active.  This is one of the required parameters in order to use the script.  By default it'll use the LogRhythmAdmin ID but if running as another user then change accordingly.
+
+The other parameters are the start and stop AIE Rule ID number.  The script export all enabled AIE rules from the given LogRhythm installation and return JSON.
+
