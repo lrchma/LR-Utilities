@@ -44,7 +44,18 @@ $logFiles = @(
 "C:\Program Files\LogRhythm\LogRhythm Web Console UI\logs"
 "C:\Program Files\LogRhythm\LogRhythm Web Services\logs"
 "C:\Program Files\LogRhythm\Data Indexer\Denorm"
-"C:\Program Files\LogRhythm\LogRhythm Console"
+"C:\Program Files\LogRhythm\Data Indexer\logs"
+"C:\Program Files\LogRhythm\Data Indexer\elasticsearch\logs"
+"C:\Program Files\LogRhythm\Data Indexer\grafana\logs"
+"C:\Program Files\LogRhythm\Data Indexer\logs\diags"
+"C:\Program Files\LogRhythm\LogRhythm Administration API\logs"
+"C:\Program Files\LogRhythm\LogRhythm AIE Drilldown\logs"
+"C:\Program Files\LogRhythm\LogRhythm AIE Drilldown\LogRhythm Notification Service\bin\Logs"
+"C:\Program Files\LogRhythm\LogRhythm Authentication Services\logs"
+"C:\Program Files\LogRhythm\LogRhythm Threat Intelligence Service\logs\archive"
+"C:\Program Files\LogRhythm\LogRhythm Web Console\nginx\logs"
+"C:\Program Files\LogRhythm\LogRhythm Web Services\LogRhythm Threat Intelligence API\vendor\threatIntelligenceAPI\logs"
+"C:\Program Files\LogRhythm\LogRhythm Web Services\LogRhythm Web Console UI\logs"
 )
 
 try  
