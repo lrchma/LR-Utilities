@@ -1,0 +1,1 @@
+﻿dir *.* -recurse | unblock-file

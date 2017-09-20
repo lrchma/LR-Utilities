@@ -44,6 +44,7 @@ $logFiles = @(
 "C:\Program Files\LogRhythm\LogRhythm Web Console UI\logs"
 "C:\Program Files\LogRhythm\LogRhythm Web Services\logs"
 "C:\Program Files\LogRhythm\Data Indexer\Denorm"
+"C:\Program Files\LogRhythm\LogRhythm Console"
 )
 
 try  
