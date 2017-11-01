@@ -1,214 +1,69 @@
-﻿[CmdletBinding()]
-Param (
-    [Parameter(Position=0)]
-    [string]$action
+﻿<#
+.NAME
+LR-ServiceManagement
+
+.SYNOPSIS
+Utility to manage LogRhythm Services
+
+.DESCRIPTION
+Used to set LR services to start automatically, and either start or stop all LogRhythm services.  During first install, or after upgrades, LogRhythm services can be set back to manual.  This script helps fix that quickly rather than doing it one by one.
+100% unofficial.  If it were possible to have more than 100% it'd be in that range!
+
+.EXAMPLE
+./LR-Services -action startall
+./LR-Services -action stopall
+./LR-Services -action autostartup
+
+.PARAMETER action
+
+.NOTES
+June 2017 @chrismartin
+
+.LINK
+https://github.com/lrchma/
+
+#>
+    
+param(
+  [Parameter(Mandatory=$true)]
+  [string]$action
 )
 
-$services = "lrjobmgr","scarm","LRAIEComMgr","LRAIEEngine","scmedsvr","scsm","LogRhythmServiceRegistry","lrtfsvc","LogRhythmWebConsoleAPI","LogRhythmWebConsoleUI","LogRhythmWebIndexer","LogRhythmWebServicesHostAPI"
 
-if( $action -eq "stop" -Or $action -eq "restart") {
-	Write-Host "Stopping the LogRhythm services..."
-	# Stop LogRhythm services
-	$ScriptBlock = {
-		param($s)
-		$service = Get-Service $s
-		if($service.Status -eq "Running") {
-			Stop-Service $s
-		}
-	}
-	foreach($s in $services) { Start-Job $ScriptBlock -ArgumentList $s | out-null}
-
-	$KeepRunning = $true
-	$i = 0
-	While ($KeepRunning)
-	{
-		
-		$jobs = Get-Job -State "Running" | out-null
-		if($jobs.ChildJobs.count -gt 0) {
-			Write-Progress -Activity "Stopping LogRhythm Services" -Status "Stopping services" -percentComplete ($i)
-		$i = $i + 15
-		} else {
-			$KeepRunning = $false}
-		Start-Sleep -s 1
-	}
+################################################################################
+# MAIN
+################################################################################
 
 
-	$all_stopped = $false
-	$timer = 0
-	$sleep_seconds = 5
-	$timer_max = 60
-	while($timer -lt $timer_max -AND -NOT $all_stopped)
-	{
-		$i = 0
-		if($timer -eq 0)
-		{
-			Write-Host "Checking status of the LogRhythm services..."
-		}
-		else
-		{
-			Write-Host "Checking status of the LogRhythm services, waiting $timer of $timer_max seconds..."
-		}
-		foreach($s in $services) 
-		{
-			$status = (Get-Service | Where-Object { $_.Name -eq $s} ).status
-			# Write-Host "$s status is: $status"
-			if( $status -eq "Pending" -OR $status -eq "StopPending" )
-			{
-				$all_stopped = $false
-				Write-Host -ForegroundColor Yellow " $s is still stopping..."
-			}
-			elseif($status -eq "Stopped")
-			{
-				if($i -eq 0)
-				{
-					$all_stopped = $true
-				}
-				Write-Host -ForegroundColor Green " $s is stopped!"
-			}
-			elseif($timer -ge $timer_max - $sleep_seconds )
-			{
-				$all_stopped = $false
-			}
-			elseif($status -eq "Running")
-			{
-				$all_stopped = $false
-				Write-Host -ForegroundColor Yellow " $s is still running."
-			}
-			else
-			{
-				$all_stopped = $false
-				Write-Host -ForegroundColor Yellow " $s is in status: $status"
-			}
-			$i = $i + 1
-		}
-		$timer = $timer + $sleep_seconds
-		Start-Sleep -s $sleep_seconds
-	}
-	if($all_stopped)
-	{
-		Write-Host -ForegroundColor Green "Successfully stopped all of the LogRhythm services!"
-		Start-Sleep -s $sleep_seconds
-	}
-	else
-	{
-		Write-Host -ForegroundColor Red "$s has not yet stopped & this script has run out of patience!"
-		Write-Host -ForegroundColor Red "Please make sure this service is stopped before continuing."
-		$message = "Would you like to continue?"
-		$result = $Host.UI.PromptForChoice($caption,$message,$choices,0)
-		if($result -eq 1) { exit }
-	}
-	
-	$dxTools="C:\Program Files\LogRhythm\Data Indexer\tools\stop-all-services.bat"
-	if (Test-Path $dxTools){
-	  $a = Start-Process -FilePath $dxTools -Wait -passthru;
-	  if ($a.ExitCode -eq 0) {
-		Write-Host -ForegroundColor Green "Successfully stopped all of the DX services!"
-	  } else {
-		Write-Host -ForegroundColor Red "Error stopping the DX services!"
-	  }
-	} else{
-	  Write-Host "Can't find the DX tools; DX Services are not being stopped."
-	}
-}
+$lrservices = @("LRAIEComMgr","LRAIEEngine","lr-allconf","lr-anubis","lr-bulldozer","lr-carpenter","lr-columbo","lr-configserver","lr-consul-template","lr-denorm","lr-elasticsearch","lr-godispatch","lr-gomaintain","lr-grafana","lr-heartthrob","lr-influxdb","lrjobmgr","lr-spawn","lr-transporter","lr-vitals","lr-watchtower","LogRhythmAdminAPI","LogRhythmAIEngineCacheDrilldown","LogRhythmAPIGateway","LogRhythmAuthenticationAPI","LogRhythmCaseAPI","LogRhythmNotificationService","LogRhythmServiceRegistry","LogRhythmSQLService","LogRhythmThreatIntelligenceAPI","LogRhythmWebConsoleAPI","LogRhythmWebConsoleUI","LogRhythmWebIndexer","LogRhythmWebServicesHostAPI","LogRhythmWindowsAuthenticationService","scmedsvr","scarm")
 
-if( $action -eq "start" -Or $action -eq "restart") {
-	Write-Host "Starting the LogRhythm services..."
-	# Start LogRhythm services
-	$ScriptBlock = {
-		param($s)
-		$service = Get-Service $s
-		if($service.Status -eq "Stopped") {
-			Start-Service $s
-		}
-	}
-	foreach($s in $services) { Start-Job $ScriptBlock -ArgumentList $s | out-null}
+try{
 
-	$KeepRunning = $true
-	$i = 0
-	While ($KeepRunning)
-	{
-		
-		$jobs = Get-Job -State "Running" | out-null
-		if($jobs.ChildJobs.count -gt 0) {
-			Write-Progress -Activity "Starting LogRhythm Services" -Status "Starting services" -percentComplete ($i)
-		$i = $i + 15
-		} else {
-			$KeepRunning = $false}
-	}
-
-
-	$all_started= $false
-	$timer = 0
-	$sleep_seconds = 5
-	$timer_max = 60
-	while($timer -lt $timer_max -AND -NOT $all_started)
-	{
-		if($timer -eq 0)
-		{
-			Write-Host "Checking status of the LogRhythm Services..."
-		}
-		else
-		{
-			Write-Host "Checking status of the LogRhythm services, waiting $timer of $timer_max seconds..."
-		  
-		}
-		foreach($s in $services) 
-		{
-			$i = 0
-			$status = (Get-Service | Where-Object { $_.Name -eq $s} ).status
-			if($status -eq "StartPending") {
-				#Write-Host "service $s status: $status"
-				Write-Host -ForegroundColor Yellow " $s is still starting..."
-				$all_started = $false
-			}
-			elseif($status -eq "Running")
-			{
-				if($i -eq 0)
-				{
-					$all_started = $true
-				}
-				Write-Host -ForegroundColor Green " $s has started!"
-			}
-			elseif($timer -ge $timer_max - $sleep_seconds )
-			{
-				$all_started=$false
-				
-			}
-			elseif($status -eq "Stopped")
-			{
-				 Write-Host -ForegroundColor Yellow " $s is still stopped."
-				 $all_started = $false
-			}
-			
-			else
-			{
-				$all_started=$false
-				Write-Host -ForegroundColor Yellow " $s is in status: $status"
-			}
-			$i = $i + 1
-		}
-		$timer = $timer + $sleep_seconds
-		Start-Sleep -s $sleep_seconds
-	}
-	if($all_started)
-	{
-		Write-Host -ForegroundColor Green "Successfully started all of the LogRhythm services!"
-	}
-	else
-	{
-		Write-Host -ForegroundColor Red "$s has not yet started & this script has run out of patience!"
-		Write-Host -ForegroundColor Red " Please ensure the service has started."
-	}
-	
-	$dxTools="C:\Program Files\LogRhythm\Data Indexer\tools\start-all-services.bat"
-	if (Test-Path $dxTools){
-	  $a = Start-Process -FilePath $dxTools -Wait -passthru;
-	  if ($a.ExitCode -eq 0) {
-		Write-Host -ForegroundColor Green "Successfully started all of the DX services!"
-	  } else {
-		Write-Host -ForegroundColor Red "Error starting the DX services!"
-	  }
-	} else{
-	  Write-Host "Can't find the DX tools; DX Services are not being started."
-	}
+    switch ($action){
+     startall
+      {
+        foreach ($service in $lrservices){
+         Start-Service $service
+         "{0} started" -f $service
+        }
+      }
+      stopall
+      {
+        foreach ($service in $lrservices){
+         Stop-Service $service
+         "{0} started" -f $service
+        }
+      }
+      autostartup
+      {
+        foreach ($service in $lrservices){
+            Set-Service $service -startuptype "automatic"
+            "{0} set to start-up type automatic" -f $service
+        }
+      }
+ 
+    }
+}catch{
+    $ErrorMessage = $_.Exception.Message
+    write-output $ErrorMessage 
 }
