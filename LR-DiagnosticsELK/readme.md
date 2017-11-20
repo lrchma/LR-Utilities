@@ -19,6 +19,6 @@ Repository includes resources to build centralised storage and search for LogRhy
 This is not an endorsed or official LogRhythm solution.  Here be dragons...
 
 #### Screenshots
-![LR Diagnostics on ELK](https://github.com/lrchma/LR-Utilities/blob/master/LR-DiagnosticsELK/Screenshots/Dashboard.png "LR Diagnostics on ELK Dashboard")
+![LR Diagnostics on ELK - Dashboard](https://github.com/lrchma/LR-Utilities/blob/master/LR-DiagnosticsELK/screenshots/Dashboard.png?raw=true "LR Diagnostics on ELK Dashboard")
 
-![LR Diagnostics on ELK](https://github.com/lrchma/LR-Utilities/blob/master/LR-DiagnosticsELK/Screenshots/Discover.png "LR Diagnostics on ELK Discover")
+![LR Diagnostics on ELK - Discover](https://github.com/lrchma/LR-Utilities/blob/master/LR-DiagnosticsELK/screenshots/Discover.png?raw=true "LR Diagnostics on ELK Discover")
