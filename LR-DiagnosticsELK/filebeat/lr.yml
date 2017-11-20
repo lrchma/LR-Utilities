@@ -1,0 +1,323 @@
+filebeat.prospectors:
+
+# @chrismartinit, Oct 2017
+
+############################################################################
+# DATA INDEXER
+############################################################################
+#LogRhythm Data Indexer: Allconf
+- type: log
+  enabled: true
+  paths:
+     - c:\program files\logrhythm\data indexer\logs\allconf.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-allconf"]
+  fields_under_root: true
+
+#LogRhythm Data Indexer: Anubis
+- type: log
+  enabled: true
+  paths:
+     - c:\program files\logrhythm\data indexer\logs\anubis.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-anubis"]
+  fields_under_root: true
+
+#LogRhythm Data Indexer: Bulldozer
+- type: log
+  enabled: true
+  paths:
+     - c:\program files\logrhythm\data indexer\logs\bulldozer.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-bulldozer"]
+  fields_under_root: true
+  
+#LogRhythm Data Indexer: Columbo
+- type: log
+  enabled: true
+  paths:
+     - c:\program files\logrhythm\data indexer\logs\columbo.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-columbo"]
+  fields_under_root: true
+
+#LogRhythm Data Indexer: Carpenter
+- type: log
+  enabled: true
+  paths:
+     - c:\program files\logrhythm\data indexer\logs\carpenter.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-carpenter"]
+  fields_under_root: true
+
+#LogRhythm Data Indexer: Configserver
+- type: log
+  enabled: true
+  paths:
+     - c:\program files\logrhythm\data indexer\logs\configserver.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-configserver"]
+  fields_under_root: true
+  
+#LogRhythm Data Indexer: Denorm
+- type: log
+  enabled: true
+  paths:
+     - c:\program files\logrhythm\data indexer\logs\denorm.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-denorm"]
+  fields_under_root: true
+
+#LogRhythm Data Indexer: godispatch
+- type: log
+  enabled: true
+  paths:
+     -  c:\program files\logrhythm\data indexer\logs\godispatch.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-godispatch"]
+  fields_under_root: true 
+
+#LogRhythm Data Indexer: gomaintain
+- type: log
+  enabled: true
+  paths:
+     -  c:\program files\logrhythm\data indexer\logs\gomaintain.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-gomaintain"]
+  fields_under_root: true  
+
+#LogRhythm Data Indexer: heartthrob
+- type: log
+  enabled: true
+  paths:
+     -  c:\program files\logrhythm\data indexer\logs\heartthrob.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-heartthrob"]
+  fields_under_root: true    
+
+#LogRhythm Data Indexer: vitals
+- type: log
+  enabled: true
+  paths:
+     -  c:\program files\logrhythm\data indexer\logs\vitals.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-vitals"]
+  fields_under_root: true   
+  
+#LogRhythm Data Indexer: spawn
+- type: log
+  enabled: true
+  paths:
+     -  c:\program files\logrhythm\data indexer\logs\spawn.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-spawn"]
+  fields_under_root: true 
+
+#LogRhythm Data Indexer: transporter
+- type: log
+  enabled: true
+  paths:
+     -  c:\program files\logrhythm\data indexer\logs\transporter.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-transporter"]
+  fields_under_root: true 
+  
+#LogRhythm Data Indexer: Watchtower
+- type: log
+  enabled: true
+  paths:
+     -  c:\program files\logrhythm\data indexer\logs\watchtower.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dx-watchtower"]
+  fields_under_root: true 
+ 
+  
+############################################################################
+# XM/PM/DP/AIE/Sysmon
+############################################################################  
+#LogRhythm System Monitor: scsm
+- type: log
+  enabled: true
+  paths:
+     -  c:\program files\logrhythm\logrhythm system monitor\logs\scsm.log
+  multiline.pattern: '^[0-9]{2}/[0-9]{2}/[0-9]{4}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-sm-scsm"]
+  fields_under_root: true 
+
+#LogRhythm Data Processor: scmedsvr
+- type: log
+  enabled: true
+  paths:
+     -  c:\program files\logrhythm\logrhythm mediator server\logs\scmedsvr.log
+  multiline.pattern: '^[0-9]{2}/[0-9]{2}/[0-9]{4}\s'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-dp-scmedsvr"]
+  fields_under_root: true 
+
+
+############################################################################
+# WebUI
+############################################################################ 
+#LogRhythm WebUI: Case API
+- type: log
+  enabled: true
+  paths:
+     -  C:\Program Files\LogRhythm\LogRhythm Web Services\logs\LogRhythm Case API.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}T'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-webui-caseapi"]
+  fields_under_root: true 
+
+#LogRhythm TIS: API
+- type: log
+  enabled: true
+  paths:
+     -  C:\Program Files\LogRhythm\LogRhythm Web Services\logs\LogRhythm Threat Intelligence API.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}T'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-tis-api"]
+  fields_under_root: true 
+  
+#LogRhythm WebUI: Web Console API
+- type: log
+  enabled: true
+  paths:
+     -  C:\Program Files\LogRhythm\LogRhythm Web Services\logs\LogRhythm Web Console API.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}T'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-webui-consoleapi"]
+  fields_under_root: true   
+
+#LogRhythm WebUI: Web Console UI
+- type: log
+  enabled: true
+  paths:
+     -  C:\Program Files\LogRhythm\LogRhythm Web Services\logs\LogRhythm Web Console UI.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}T'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-webui-consoleui"]
+  fields_under_root: true   
+  
+#LogRhythm WebUI: Web Console Indexer
+- type: log
+  enabled: true
+  paths:
+     -  C:\Program Files\LogRhythm\LogRhythm Web Services\logs\LogRhythm Web Console Indexer.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}T'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-webui-indexer"]
+  fields_under_root: true     
+
+ #LogRhythm WebUI: Web Console Host API
+- type: log
+  enabled: true
+  paths:
+     -  C:\Program Files\LogRhythm\LogRhythm Web Services\logs\LogRhythm Web Services Host API.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}T'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-webui-hostapi"]
+  fields_under_root: true    
+
+############################################################################
+# Common Logs
+############################################################################ 
+#Common: LogRhythm API Gateway
+- type: log
+  enabled: true
+  paths:
+     -  C:\Program Files\LogRhythm\LogRhythm Common\logs\LogRhythm API Gateway.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}T'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-common-apigateway"]
+  fields_under_root: true 
+
+#Common: LogRhythm Service Registry
+- type: log
+  enabled: false
+  paths:
+     -  C:\Program Files\LogRhythm\LogRhythm Common\logs\LogRhythm Service Registry.log
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}T'
+  multiline.negate: true
+  multiline.match: after
+  fields:
+    tags: ["lr-common-serviceregistry"]
+  fields_under_root: true 
+
+
+############################################################################
+# Global Config Stuff
+############################################################################   
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+setup.kibana:
+  host: "localhost:5601"
+output.logstash:
+  hosts: ["localhost:5044"]
+
+
+
+
+
+
