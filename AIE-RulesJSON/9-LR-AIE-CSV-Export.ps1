@@ -1,12 +1,11 @@
-﻿<#                                                                                                                                                                                                                                       
-.NAME
+﻿<#                                                                                                                                                                            .NAME
 LR-AIE-CSV Export
 
 .SYNOPSIS
-Quick & dirty script to export AIE rules, rule blocks, primary filters and metadata to CSV.  Outputs to console and a file called aie.csv in the same directory as the script is run from.
+The following script contains coarse code and due to its content should not be viewed by anyone, ever.  But if you must, read on...
 
 .DESCRIPTION
-Script utilises the LogRhythm Host API to export AIE rules to CSV format for statistical analysis.  The Host API is not an officially supported public API, but rather an intenal only API at this time.  In order to call the API you'll need run it from the WebUI server, and already be logged into the WebUI.  No response most likley means you're not logged in, or else on the wrong host, and definetely means I didn't add error handling.  Classifications & Group By fields are stored as either 1 or 0, but due to the sheer number of Common Events and MPE Rules only the top ten are written out.
+Script utilises the LogRhythm Host API.  This is not an officially supported public API, but rather an intenal only API at this time.  In order to call the API you'll need run it from the WebUI server, and already be logged into the WebUI.  No response most likley means you're not logged in, or else on the wrong host, and definetely means I didn't add error handling.  
 
 .EXAMPLE
 ./LR-AIE-CSV-Export -userid 1 -aiestartruleno 1 -aiestopruleno 1400
@@ -33,8 +32,8 @@ param(
   [long]$aieStopRuleNo = 1500#00000000
 )
 
-#Simple RBP calculation based on the AIE rules risk and false positive values.  
-#Does not account for variables like Classification, Entity or Host values
+#Simple Risk calculation based on the default risk and false positive levels.  
+#Does not account for variables like entity or host values
 function CalcRBP($risk,$fpp){
 
     switch($risk){
@@ -74,22 +73,19 @@ if (Test-Path $FileName)
 }
 
 #CSV Headers
-#Crude, but does the job.  Classifications are prefixed C, Common Events RB_CE, MPE Rules RB_MPE, and Group By is GB_. 
-$headers = "No,AlarmRule,Enabled,RuleGroup,Supression,EventForwarding,RiskRating,FPP,RBP,RB_Type,RB_DataSource,C_Access Failure,C_Access Granted,C_Access Revoked,C_Access Success,C_Account Created,C_Account Deleted,C_Account Modified,C_Activity,C_Attack,C_Authentication Failure,C_Authentication Success,C_Compromise,C_Configuration,C_Critical,C_Denial Of Service,C_Error,C_Failed Activity,C_Failed Attack,C_Failed Denial of Service,C_Failed Malware,C_Failed Misuse,C_Failed Suspicious,C_Information,C_Malware,C_Misuse,C_Network Allow,C_Network Deny,C_Network Traffic,C_Other Audit,C_Other Audit Failure,C_Other Audit Success,C_Other Operations,C_Other Security,C_Policy,C_Reconnaissance,C_Startup and Shutdown,C_Suspicious,C_Vulnerability,C_Warning,RB_CE1,RB_CE2,RB_CE3,RB_CE4,RB_CE5,RB_CE6,RB_CE7,RB_CE8,RB_CE9,RB_CE10,RB_MPE1,RB_MPE2,RB_MPE3,RB_MPE4,RB_MPE5,RB_MPE6,RB_MPE7,RB_MPE8,RB_MPE9,RB_MPE10,GB_Account,GB_Action,GB_Command,GB_CE,GB_CVE,GB_DEntity,GB_Destination,GB_DHostName,GB_DInterface,GB_DIP,GB_Direction,GB_DLocationCity,GB_DLocationRegion,GB_DMAC,GB_DNATIP,GB_DNATPort,GB_DNetwork,GB_Domain,GB_DomainOrigin,GB_DPort,GB_DZone,GB_Entity,GB_Group,GB_Hash,GB_KnownDHost,GB_KnownService,GB_KnownSHost,GB_Login,GB_MPERule,GB_MsgClass,GB_MsgSource,GB_MsgSourceHost,GB_Object,GB_ObjectName,GB_ObjectType,GB_ParentProcessId,GB_ParentProcessName,GB_ParentProcessPath,GB_PID,GB_Policy,GB_Process,GB_Protocol,GB_Reason,GB_Recipient,GB_RecipientIdentityID,GB_ResponseCode,GB_Result,GB_RootEntity,GB_Sender,GB_SenderIdentityID,GB_SEntity,GB_SerialNumber,GB_Service,GB_Session,GB_SessionType,GB_Severity,GB_SHostName,GB_SInterface,GB_SIP,GB_SLocationCity,GB_SLocationRegion,GB_SMAC,GB_SNATIP,GB_SNATPort,GB_SNetwork,GB_Source,GB_SPort,GB_Status,GB_Subject,GB_SZone,GB_ThreatId,GB_ThreatName,GB_URL,GB_UserAgent,GB_UserImpactedIdentityID,GB_UserOriginIdentityID,GB_VendorInfo,GB_VendorMessageID,GB_Version" 
+$headers = "No,AlarmRule,Enabled,RuleGroup,Supression,EventForwarding,RiskRating,FPP,RBP,RB_BlockID,RB_Type,RB_DataSource,C_Access Failure,C_Access Granted,C_Access Revoked,C_Access Success,C_Account Created,C_Account Deleted,C_Account Modified,C_Activity,C_Attack,C_Authentication Failure,C_Authentication Success,C_Compromise,C_Configuration,C_Critical,C_Denial Of Service,C_Error,C_Failed Activity,C_Failed Attack,C_Failed Denial of Service,C_Failed Malware,C_Failed Misuse,C_Failed Suspicious,C_Information,C_Malware,C_Misuse,C_Network Allow,C_Network Deny,C_Network Traffic,C_Other Audit,C_Other Audit Failure,C_Other Audit Success,C_Other Operations,C_Other Security,C_Policy,C_Reconnaissance,C_Startup and Shutdown,C_Suspicious,C_Vulnerability,C_Warning,RB_CE1,RB_CE2,RB_CE3,RB_CE4,RB_CE5,RB_CE6,RB_CE7,RB_CE8,RB_CE9,RB_CE10,RB_MPE1,RB_MPE2,RB_MPE3,RB_MPE4,RB_MPE5,RB_MPE6,RB_MPE7,RB_MPE8,RB_MPE9,RB_MPE10,GB_Account,GB_Action,GB_Command,GB_CE,GB_CVE,GB_DEntity,GB_Destination,GB_DHostName,GB_DInterface,GB_DIP,GB_Direction,GB_DLocationCity,GB_DLocationRegion,GB_DMAC,GB_DNATIP,GB_DNATPort,GB_DNetwork,GB_Domain,GB_DomainOrigin,GB_DPort,GB_DZone,GB_Entity,GB_Group,GB_Hash,GB_KnownDHost,GB_KnownService,GB_KnownSHost,GB_Login,GB_MPERule,GB_MsgClass,GB_MsgSource,GB_MsgSourceHost,GB_Object,GB_ObjectName,GB_ObjectType,GB_ParentProcessId,GB_ParentProcessName,GB_ParentProcessPath,GB_PID,GB_Policy,GB_Process,GB_Protocol,GB_Reason,GB_Recipient,GB_RecipientIdentityID,GB_ResponseCode,GB_Result,GB_RootEntity,GB_Sender,GB_SenderIdentityID,GB_SEntity,GB_SerialNumber,GB_Service,GB_Session,GB_SessionType,GB_Severity,GB_SHostName,GB_SInterface,GB_SIP,GB_SLocationCity,GB_SLocationRegion,GB_SMAC,GB_SNATIP,GB_SNATPort,GB_SNetwork,GB_Source,GB_SPort,GB_Status,GB_Subject,GB_SZone,GB_ThreatId,GB_ThreatName,GB_URL,GB_UserAgent,GB_UserImpactedIdentityID,GB_UserOriginIdentityID,GB_VendorInfo,GB_VendorMessageID,GB_Version" 
 add-content aie.csv $headers
 
 #Main
 for($i=$aieStartRuleNo; $i -le $aieStopRuleNo; $i++)
 {
     try {
-	
-		#Will fail if Internet Explorer first run Wizard has not been completed
         $rs = Invoke-WebRequest -Uri http://localhost:8505/lr-services-host-api/actions/domainobject -ContentType "application/json" -Method POST -Body "{source : '',destination : 'DomainObjectService',messageType : 'GetObjectRequest',ver: 1, data: {objectType : 'AieRule', userId : 1, objectId : $i,}, }"
         $psObject = $rs.content | ConvertFrom-JSON
         
         #AIE Rule Settings
         foreach($object in $psObject){
-            $aa = "{0},`"{1}`",{2},{3},{4},{5},{6},{7},{8}" -f $object.id, `
+            $aa = "{0},`"{1}`",{2},{3},{4},{5},{6},{7},{8}," -f $object.id, `
                                                     ($object.alarmRule.name -replace ",", " "), ` #replace any commas in the Alarm Rule name
                                                     $object.alarmRule.enabled, `
                                                     $object.ruleGroup, `
@@ -98,13 +94,12 @@ for($i=$aieStartRuleNo; $i -le $aieStopRuleNo; $i++)
                                                     $object.commonEvent.riskRating, `
                                                     $object.falsePositiveProbability.id,
                                                     (CalcRBP $object.commonEvent.riskRating $object.falsePositiveProbability.name)
-
+                                                    
 
             #AIE Rule Block Settings
             foreach($block in $object.blocks){
              $bb = "{0},{1},{2}," -f $block.id, $block.blockType.name, $block.datasource
-
-                    #Primary Filter: Classifications (Type 10)
+                    
                     $classification = [ordered]@{
                         "Access Failure"=0;
                         "Access Granted"=0;
@@ -147,56 +142,17 @@ for($i=$aieStartRuleNo; $i -le $aieStopRuleNo; $i++)
                         "Warning"=0;
                     }
 
-					foreach($group in $block.primaryCriteria.fieldFilters.values.Where({$_.filterType -eq "10"})){
 
-                        if($group.displayvalue -eq "Access Failure"){$classification["Access Failure"] = 1}
-                        if($group.displayvalue -eq "Access Granted"){$classification["Access Granted"] = 1}
-                        if($group.displayvalue -eq "Access Revoked"){$classification["Access Revoked"] = 1}
-                        if($group.displayvalue -eq "Access Success"){$classification["Access Success"] = 1}
-                        if($group.displayvalue -eq "Account Created"){$classification["Account Created"] = 1}
-                        if($group.displayvalue -eq "Account Deleted"){$classification["Account Deleted"] = 1}
-                        if($group.displayvalue -eq "Account Modified"){$classification["Account Modified"] = 1}
-                        if($group.displayvalue -eq "Activity"){$classification["Activity"] = 1}
-                        if($group.displayvalue -eq "Attack"){$classification["Attack"] = 1}
-                        if($group.displayvalue -eq "Authentication Failure"){$classification["Authentication Failure"] = 1}
-                        if($group.displayvalue -eq "Authentication Success"){$classification["Authentication Success"] = 1}
-                        if($group.displayvalue -eq "Compromise"){$classification["Compromise"] = 1}
-                        if($group.displayvalue -eq "Configuration"){$classification["Configuration"] = 1}
-                        if($group.displayvalue -eq "Critical"){$classification["Critical"] = 1}
-                        if($group.displayvalue -eq "Denial Of Service"){$classification["Denial Of Service"] = 1}
-                        if($group.displayvalue -eq "Error"){$classification["Error"] = 1}
-                        if($group.displayvalue -eq "Failed Activity"){$classification["Failed Activity"] = 1}
-                        if($group.displayvalue -eq "Failed Attack"){$classification["Failed Attack"] = 1}
-                        if($group.displayvalue -eq "Failed Denial of Service"){$classification["Failed Denial of Service"] = 1}
-                        if($group.displayvalue -eq "Failed Malware"){$classification["Failed Malware"] = 1}
-                        if($group.displayvalue -eq "Failed Misuse"){$classification["Failed Misuse"] = 1}
-                        if($group.displayvalue -eq "Failed Suspicious"){$classification["Failed Suspicious"] = 1}
-                        if($group.displayvalue -eq "Information"){$classification["Information"] = 1}
-                        if($group.displayvalue -eq "Malware"){$classification["Malware"] = 1}
-                        if($group.displayvalue -eq "Misuse"){$classification["Misuse"] = 1}
-                        if($group.displayvalue -eq "Network Allow"){$classification["Network Allow"] = 1}
-                        if($group.displayvalue -eq "Network Deny"){$classification["Network Deny"] = 1}
-                        if($group.displayvalue -eq "Network Traffic"){$classification["Network Traffic"] = 1}
-                        if($group.displayvalue -eq "Other Audit"){$classification["Other Audit"] = 1}
-                        if($group.displayvalue -eq "Other Audit Failure"){$classification["Other Audit Failure"] = 1}
-                        if($group.displayvalue -eq "Other Audit Success"){$classification["Other Audit Success"] = 1}
-                        if($group.displayvalue -eq "Other Operations"){$classification["Other Operations"] = 1}
-                        if($group.displayvalue -eq "Other Security"){$classification["Other Security"] = 1}
-                        if($group.displayvalue -eq "Policy"){$classification["Policy"] = 1}
-                        if($group.displayvalue -eq "Reconnaissance"){$classification["Reconnaissance"] = 1}
-                        if($group.displayvalue -eq "Startup and Shutdown"){$classification["Startup and Shutdown"] = 1}
-                        if($group.displayvalue -eq "Suspicious"){$classification["Suspicious"] = 1}
-                        if($group.displayvalue -eq "Vulnerability"){$classification["Vulnerability"] = 1}
-                        if($group.displayvalue -eq "Warning"){$classification["Warning"] = 1}
-                    }
+                     
+                    #Primary Filter: Classifications (Type 10)
+                    #Currently grabs first 10, there could be more!
 
-                    $zz_class = $classification.Values.ForEach({"$_$($classification.$_)"}) -join ','
 
                     #Primary Filter: Common Events (Type 11)
                     #Currently grabs first 10, there could be more!
                     $ee_ce = For ($ii=0; $ii -le 9; $ii++) {
                                 if($block.primaryCriteria.fieldFilters.values[$ii].filterType -eq "11"){
-                                   "{0}," -f $block.primaryCriteria.fieldFilters.values[$ii].displayValue
+                                   "{0}," -f ($block.primaryCriteria.fieldFilters.values[$ii].displayValue -replace ",", " ")
                                 } else {
                                     ","
                                 }
@@ -206,7 +162,7 @@ for($i=$aieStartRuleNo; $i -le $aieStopRuleNo; $i++)
                     #Currently grabs first 10, there could be more!
                     $ff_mpe = For ($ii=0; $ii -le 9; $ii++) {
                                 if($block.primaryCriteria.fieldFilters.values[$ii].filterType -eq "12"){
-                                   "{0}," -f $block.primaryCriteria.fieldFilters.values[$ii].displayValue
+                                   "{0}," -f ($block.primaryCriteria.fieldFilters.values[$ii].displayValue -replace ",", " ")
                                 } else {
                                     ","
                                 }
@@ -383,11 +339,56 @@ for($i=$aieStartRuleNo; $i -le $aieStopRuleNo; $i++)
 
                     #output the contents of the hash table to a CSV single line                    
                     $zz_groupby = $groupby.Values.ForEach({"$_$($groupby.$_)"}) -join ','
-                     
+
+
+                    foreach($group in $block.primaryCriteria.fieldFilters.values.Where({$_.filterType -eq "10"})){
+
+                        if($group.displayvalue -eq "Access Failure"){$classification["Access Failure"] = 1}
+                        if($group.displayvalue -eq "Access Granted"){$classification["Access Granted"] = 1}
+                        if($group.displayvalue -eq "Access Revoked"){$classification["Access Revoked"] = 1}
+                        if($group.displayvalue -eq "Access Success"){$classification["Access Success"] = 1}
+                        if($group.displayvalue -eq "Account Created"){$classification["Account Created"] = 1}
+                        if($group.displayvalue -eq "Account Deleted"){$classification["Account Deleted"] = 1}
+                        if($group.displayvalue -eq "Account Modified"){$classification["Account Modified"] = 1}
+                        if($group.displayvalue -eq "Activity"){$classification["Activity"] = 1}
+                        if($group.displayvalue -eq "Attack"){$classification["Attack"] = 1}
+                        if($group.displayvalue -eq "Authentication Failure"){$classification["Authentication Failure"] = 1}
+                        if($group.displayvalue -eq "Authentication Success"){$classification["Authentication Success"] = 1}
+                        if($group.displayvalue -eq "Compromise"){$classification["Compromise"] = 1}
+                        if($group.displayvalue -eq "Configuration"){$classification["Configuration"] = 1}
+                        if($group.displayvalue -eq "Critical"){$classification["Critical"] = 1}
+                        if($group.displayvalue -eq "Denial Of Service"){$classification["Denial Of Service"] = 1}
+                        if($group.displayvalue -eq "Error"){$classification["Error"] = 1}
+                        if($group.displayvalue -eq "Failed Activity"){$classification["Failed Activity"] = 1}
+                        if($group.displayvalue -eq "Failed Attack"){$classification["Failed Attack"] = 1}
+                        if($group.displayvalue -eq "Failed Denial of Service"){$classification["Failed Denial of Service"] = 1}
+                        if($group.displayvalue -eq "Failed Malware"){$classification["Failed Malware"] = 1}
+                        if($group.displayvalue -eq "Failed Misuse"){$classification["Failed Misuse"] = 1}
+                        if($group.displayvalue -eq "Failed Suspicious"){$classification["Failed Suspicious"] = 1}
+                        if($group.displayvalue -eq "Information"){$classification["Information"] = 1}
+                        if($group.displayvalue -eq "Malware"){$classification["Malware"] = 1}
+                        if($group.displayvalue -eq "Misuse"){$classification["Misuse"] = 1}
+                        if($group.displayvalue -eq "Network Allow"){$classification["Network Allow"] = 1}
+                        if($group.displayvalue -eq "Network Deny"){$classification["Network Deny"] = 1}
+                        if($group.displayvalue -eq "Network Traffic"){$classification["Network Traffic"] = 1}
+                        if($group.displayvalue -eq "Other Audit"){$classification["Other Audit"] = 1}
+                        if($group.displayvalue -eq "Other Audit Failure"){$classification["Other Audit Failure"] = 1}
+                        if($group.displayvalue -eq "Other Audit Success"){$classification["Other Audit Success"] = 1}
+                        if($group.displayvalue -eq "Other Operations"){$classification["Other Operations"] = 1}
+                        if($group.displayvalue -eq "Other Security"){$classification["Other Security"] = 1}
+                        if($group.displayvalue -eq "Policy"){$classification["Policy"] = 1}
+                        if($group.displayvalue -eq "Reconnaissance"){$classification["Reconnaissance"] = 1}
+                        if($group.displayvalue -eq "Startup and Shutdown"){$classification["Startup and Shutdown"] = 1}
+                        if($group.displayvalue -eq "Suspicious"){$classification["Suspicious"] = 1}
+                        if($group.displayvalue -eq "Vulnerability"){$classification["Vulnerability"] = 1}
+                        if($group.displayvalue -eq "Warning"){$classification["Warning"] = 1}
+                    }
+
+                    $zz_class = $classification.Values.ForEach({"$_$($classification.$_)"}) -join ','                    
 
                     #ewwwww, dont look at this
                     $z =  $aa + $bb + $zz_class + "," + $ee_ce + " " + $ff_mpe + $zz_groupby
-                    $z
+                    #$z
                     $z | add-content aie.csv
 
             }
