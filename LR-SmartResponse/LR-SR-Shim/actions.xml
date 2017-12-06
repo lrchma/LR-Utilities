@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="SmartResponse Shim" Guid="2f6cb4cc-4dbd-45fb-9f1c-b46a1535a662" Version="1" IsLogRhythmPlugin="false">
+  <!--0 Params -->
+  <remv1:Action Name="SRShim[i]:0_args" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstatParameter Name="Script" Switch="-file LR-SR-Shim.ps1" Order="1" />
+    <remv1:StringParameter Name="targetScript" Switch="-targetScript " Order="2" />	
+    <remv1:StringParameter Name="paramCount" Switch="-paramCount " Order="3">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="0" />
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+    <remv1:StringParameter Name="debugMode" Switch="-debugMode " Order="4">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="0" />     
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+  </remv1:Action>
+  <!-- 1 Param -->
+  <remv1:Action Name="SRShim[i]:1_arg" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR-SR-Shim.ps1" Order="1" />
+    <remv1:StringParameter Name="targetScript" Switch="-targetScript " Order="2" />	
+    <remv1:StringParameter Name="paramCount" Switch="-paramCount " Order="3">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="1" />
+		</remv1:DefaultInput>
+	</remv1:StringParameter>
+    <remv1:StringParameter Name="param1" Switch="-param1 " Order="4" />	
+    <remv1:StringParameter Name="debugMode" Switch="-debugMode " Order="5">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="0" />     
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+  </remv1:Action>
+  <!-- 2 Param -->
+  <remv1:Action Name="SRShim[i]:2_args" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR-SR-Shim.ps1" Order="1" />
+    <remv1:StringParameter Name="targetScript" Switch="-targetScript " Order="2" />	
+    <remv1:StringParameter Name="paramCount" Switch="-paramCount " Order="3">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="2" />
+		</remv1:DefaultInput>
+	</remv1:StringParameter>
+    <remv1:StringParameter Name="param1" Switch="-param1 " Order="4" />	
+    <remv1:StringParameter Name="param2" Switch="-param2 " Order="5" />		
+    <remv1:StringParameter Name="debugMode" Switch="-debugMode " Order="6">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="0" />     
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+  </remv1:Action>
+ <!-- 3 Param -->
+  <remv1:Action Name="SRShim[i]:3_args" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR-SR-Shim.ps1" Order="1" />
+    <remv1:StringParameter Name="targetScript" Switch="-targetScript " Order="2" />	
+    <remv1:StringParameter Name="paramCount" Switch="-paramCount " Order="3">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="3" />
+		</remv1:DefaultInput>
+	</remv1:StringParameter>
+    <remv1:StringParameter Name="param1" Switch="-param1 " Order="4" />	
+    <remv1:StringParameter Name="param2" Switch="-param2 " Order="5" />	
+    <remv1:StringParameter Name="param3" Switch="-param3 " Order="6" />			
+    <remv1:StringParameter Name="debugMode" Switch="-debugMode " Order="7">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="0" />     
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+  </remv1:Action>
+ <!-- 4 Param -->
+  <remv1:Action Name="SRShim[i]:4_args" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR-SR-Shim.ps1" Order="1" />
+    <remv1:StringParameter Name="targetScript" Switch="-targetScript " Order="2" />	
+    <remv1:StringParameter Name="paramCount" Switch="-paramCount " Order="3">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="4" />
+		</remv1:DefaultInput>
+	</remv1:StringParameter>
+    <remv1:StringParameter Name="param1" Switch="-param1 " Order="4" />	
+    <remv1:StringParameter Name="param2" Switch="-param2 " Order="5" />	
+    <remv1:StringParameter Name="param3" Switch="-param3 " Order="6" />
+    <remv1:StringParameter Name="param4" Switch="-param4 " Order="7" />	
+    <remv1:StringParameter Name="debugMode" Switch="-debugMode " Order="8">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="0" />     
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+  </remv1:Action>
+<!-- 5 Param -->
+  <remv1:Action Name="SRShim[i]:5_args" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR-SR-Shim.ps1" Order="1" />
+    <remv1:StringParameter Name="targetScript" Switch="-targetScript " Order="2" />	
+    <remv1:StringParameter Name="paramCount" Switch="-paramCount " Order="3">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="5" />
+		</remv1:DefaultInput>
+	</remv1:StringParameter>
+    <remv1:StringParameter Name="param1" Switch="-param1 " Order="4" />	
+    <remv1:StringParameter Name="param2" Switch="-param2 " Order="5" />	
+    <remv1:StringParameter Name="param3" Switch="-param3 " Order="6" />
+    <remv1:StringParameter Name="param4" Switch="-param4 " Order="7" />
+    <remv1:StringParameter Name="param5" Switch="-param5 " Order="8" />	
+    <remv1:StringParameter Name="debugMode" Switch="-debugMode " Order="9">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="0" />     
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+  </remv1:Action>
+<!-- 6 Param -->
+  <remv1:Action Name="SRShim[i]:6_args" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR-SR-Shim.ps1" Order="1" />
+    <remv1:StringParameter Name="targetScript" Switch="-targetScript " Order="2" />	
+    <remv1:StringParameter Name="paramCount" Switch="-paramCount " Order="3">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="6" />
+		</remv1:DefaultInput>
+	</remv1:StringParameter>
+    <remv1:StringParameter Name="param1" Switch="-param1 " Order="4" />	
+    <remv1:StringParameter Name="param2" Switch="-param2 " Order="5" />	
+    <remv1:StringParameter Name="param3" Switch="-param3 " Order="6" />
+    <remv1:StringParameter Name="param4" Switch="-param4 " Order="7" />
+    <remv1:StringParameter Name="param5" Switch="-param5 " Order="8" />
+    <remv1:StringParameter Name="param6" Switch="-param6 " Order="9" />		
+    <remv1:StringParameter Name="debugMode" Switch="-debugMode " Order="10">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="0" />     
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+  </remv1:Action>
+<!-- 7 Param -->
+  <remv1:Action Name="SRShim[i]:7_args" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR-SR-Shim.ps1" Order="1" />
+    <remv1:StringParameter Name="targetScript" Switch="-targetScript " Order="2" />	
+    <remv1:StringParameter Name="paramCount" Switch="-paramCount " Order="3">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="7" />
+		</remv1:DefaultInput>
+	</remv1:StringParameter>
+    <remv1:StringParameter Name="param1" Switch="-param1 " Order="4" />	
+    <remv1:StringParameter Name="param2" Switch="-param2 " Order="5" />	
+    <remv1:StringParameter Name="param3" Switch="-param3 " Order="6" />
+    <remv1:StringParameter Name="param4" Switch="-param4 " Order="7" />
+    <remv1:StringParameter Name="param5" Switch="-param5 " Order="8" />
+    <remv1:StringParameter Name="param6" Switch="-param6 " Order="9" />
+    <remv1:StringParameter Name="param7" Switch="-param7 " Order="10" />		
+    <remv1:StringParameter Name="debugMode" Switch="-debugMode " Order="11">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="0" />     
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+  </remv1:Action>
+<!-- 8 Param -->
+  <remv1:Action Name="SRShim[i]:8_args" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR-SR-Shim.ps1" Order="1" />
+    <remv1:StringParameter Name="targetScript" Switch="-targetScript " Order="2" />	
+    <remv1:StringParameter Name="paramCount" Switch="-paramCount " Order="3">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="8" />
+		</remv1:DefaultInput>
+	</remv1:StringParameter>
+    <remv1:StringParameter Name="param1" Switch="-param1 " Order="4" />	
+    <remv1:StringParameter Name="param2" Switch="-param2 " Order="5" />	
+    <remv1:StringParameter Name="param3" Switch="-param3 " Order="6" />
+    <remv1:StringParameter Name="param4" Switch="-param4 " Order="7" />
+    <remv1:StringParameter Name="param5" Switch="-param5 " Order="8" />
+    <remv1:StringParameter Name="param6" Switch="-param6 " Order="9" />
+    <remv1:StringParameter Name="param7" Switch="-param7 " Order="10" />
+    <remv1:StringParameter Name="param8" Switch="-param8 " Order="11" />	
+    <remv1:StringParameter Name="debugMode" Switch="-debugMode " Order="12">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="0" />     
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+  </remv1:Action>
+<!-- 9 Param -->
+  <remv1:Action Name="SRShim[i]:9_args" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR-SR-Shim.ps1" Order="1" />
+    <remv1:StringParameter Name="targetScript" Switch="-targetScript " Order="2" />	
+    <remv1:StringParameter Name="paramCount" Switch="-paramCount " Order="3">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="9" />
+		</remv1:DefaultInput>
+	</remv1:StringParameter>
+    <remv1:StringParameter Name="param1" Switch="-param1 " Order="4" />	
+    <remv1:StringParameter Name="param2" Switch="-param2 " Order="5" />	
+    <remv1:StringParameter Name="param3" Switch="-param3 " Order="6" />
+    <remv1:StringParameter Name="param4" Switch="-param4 " Order="7" />
+    <remv1:StringParameter Name="param5" Switch="-param5 " Order="8" />
+    <remv1:StringParameter Name="param6" Switch="-param6 " Order="9" />
+    <remv1:StringParameter Name="param7" Switch="-param7 " Order="10" />
+    <remv1:StringParameter Name="param8" Switch="-param8 " Order="11" />
+    <remv1:StringParameter Name="param9" Switch="-param9 " Order="12" />	
+    <remv1:StringParameter Name="debugMode" Switch="-debugMode " Order="13">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="0" />     
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+  </remv1:Action>    
+</remv1:Remediation-Plugin>
