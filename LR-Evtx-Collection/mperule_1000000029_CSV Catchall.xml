@@ -1,0 +1,83 @@
+<?xml version="1.0" standalone="yes"?>
+<RuleDataset>
+  <ExportInfo>
+    <ExportConsoleVersion>7.3.2.0</ExportConsoleVersion>
+    <KBVersion>7.1.413.4</KBVersion>
+    <DateExported>2017-12-06T16:54:40.7689386-08:00</DateExported>
+    <ExportLicense>646</ExportLicense>
+    <ExportUser>logrhythmadmin</ExportUser>
+  </ExportInfo>
+  <MPERule>
+    <MPERuleID>1000000079</MPERuleID>
+    <MPERuleRegexID>1000000029</MPERuleRegexID>
+    <RuleStatus>1</RuleStatus>
+    <StatusName>Production</StatusName>
+    <CommonEventID>20886</CommonEventID>
+    <CommonEventName>General Logging Information</CommonEventName>
+    <MsgClassID>3400</MsgClassID>
+    <Name>CSV Catchall</Name>
+    <FullName>CSV Catchall</FullName>
+    <BaseRule>1</BaseRule>
+    <ShortDesc>TimeGenerated,ComputerName,SourceName,EventTypeName,EventID,EventLog,RecordNumber,Message</ShortDesc>
+    <DefMsgTTL>32</DefMsgTTL>
+    <DefMsgArchiveMode>2</DefMsgArchiveMode>
+    <DefMsgArchiveModeBool>true</DefMsgArchiveModeBool>
+    <DefForwarding>1</DefForwarding>
+    <DefForwardingBool>true</DefForwardingBool>
+    <DefRiskRating>0</DefRiskRating>
+    <DefFalseAlarmRating>0</DefFalseAlarmRating>
+    <InheritTech>1</InheritTech>
+    <RecordStatus>1</RecordStatus>
+    <DateUpdated>2017-12-07T00:54:20.917-08:00</DateUpdated>
+    <SortOrder>1</SortOrder>
+    <VersionMajor>4</VersionMajor>
+    <VersionMinor>1</VersionMinor>
+    <SHostIs>0</SHostIs>
+    <DHostIs>0</DHostIs>
+    <ServiceIs>0</ServiceIs>
+    <HostContext>0</HostContext>
+    <PrefixBaseRuleName>0</PrefixBaseRuleName>
+    <IsSystemRule>No</IsSystemRule>
+    <NewRuleRecordType>0</NewRuleRecordType>
+    <DefLogMartMode>13627389</DefLogMartMode>
+  </MPERule>
+  <MPERuleRegex>
+    <MPERuleRegexID>1000000029</MPERuleRegexID>
+    <RegexTagged>^(?&lt;timegenerated&gt;[^,]+),(?&lt;sname&gt;[^,]+),(?&lt;vendorinfo&gt;[^,]+),(?&lt;severity&gt;[^,]+),(?&lt;vmid&gt;[^,]+),(?&lt;object&gt;[^,]+),(?&lt;RecordNumber&gt;[^,]+),[^$]+</RegexTagged>
+    <IgnoreCase>1</IgnoreCase>
+    <Multiline>0</Multiline>
+    <RecordStatus>1</RecordStatus>
+    <DateUpdated>2017-12-07T00:54:20.917-08:00</DateUpdated>
+    <PerfMonMode>1</PerfMonMode>
+    <VersionMajor>4</VersionMajor>
+    <VersionMinor>1</VersionMinor>
+  </MPERuleRegex>
+  <MPERuleToMST>
+    <MsgSourceTypeID>1000000004</MsgSourceTypeID>
+    <MPERuleRegexID>1000000029</MPERuleRegexID>
+    <SortOrder>1</SortOrder>
+    <AutoSort>0</AutoSort>
+  </MPERuleToMST>
+  <CommonEvent>
+    <CommonEventID>20886</CommonEventID>
+    <MsgClassID>3400</MsgClassID>
+    <Name>General Logging Information</Name>
+    <ShortDesc />
+    <DefRiskRating>0</DefRiskRating>
+    <DateUpdated>2017-10-26T18:04:54.33-07:00</DateUpdated>
+    <RecordStatus>1</RecordStatus>
+  </CommonEvent>
+  <MsgSourceType>
+    <MsgSourceTypeID>1000000004</MsgSourceTypeID>
+    <Name>Flat File - MS Windows Event Logging EVTX</Name>
+    <FullName>Flat File - MS Windows Event Logging EVTX</FullName>
+    <Abbreviation>MS EVTX</Abbreviation>
+    <ShortDesc />
+    <LongDesc />
+    <ParentMsgSourceTypeID>1000000000</ParentMsgSourceTypeID>
+    <IsMst>1</IsMst>
+    <DateUpdated>2017-12-07T00:12:57.937-08:00</DateUpdated>
+    <MsgSourceFormat>3</MsgSourceFormat>
+    <RecordStatus>1</RecordStatus>
+  </MsgSourceType>
+</RuleDataset>
