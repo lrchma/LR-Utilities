@@ -8,13 +8,13 @@ PowerShell wrapper around Microsoft LogParser for reading raw EVTX files into Lo
 
 ## Example
 
-./LR-Evtx-Collector.ps1 [-logParser] <string[]> [-evtxFile] <string[]> [-evtxQuery] <string[]> [-outputFile] <string[]> [-debugMode <bool>]
+```./LR-Evtx-Collector.ps1 [-logParser] <string[]> [-evtxFile] <string[]> [-evtxQuery] <string[]> [-outputFile] <string[]> [-debugMode <bool>]```
 
 ## Setup in LogRhythm
 
 * Import the MPE rule within this repository
 * Optionally, add a timestamp filter as below
-** Log Source Timestamp Format = Windows EVTX (^<YY>-<M>-<d> <h>:<m>:<s>,)
+** Log Source Timestamp Format = `Windows EVTX (^<YY>-<M>-<d> <h>:<m>:<s>,)`
 ** If your EVTX files have logs older than 90 days, you may wish to omit the timestamp as otherwise the logs will be dropped and not indexed.
 
 ## Notes
