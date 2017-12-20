@@ -51,7 +51,7 @@ try{
       {
         foreach ($service in $lrservices){
          Stop-Service $service
-         "{0} started" -f $service
+         "{0} stopped" -f $service
         }
       }
       autostartup
