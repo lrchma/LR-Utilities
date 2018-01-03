@@ -1,0 +1,92 @@
+Host,User,ProcessName,ProcessPath,ProcessID,ProcessHash,ParentProcessName,ParentProcessPath,ParentProcessID
+lrdc.lab.local,local service,svchost.exe,C:\Windows\System32\,472,4EEA9BDFE0EB41759D96EC9BD224C4519314A8FA,services.exe,C:\Windows\System32\,484
+lrdc.lab.local,administrator,explorer.exe,C:\Windows\,2832,2FD807AC9A6ABD1C4FBE1F14922731B3EDA213FF,userinit.exe,C:\Windows\System32\,2820
+lrdc.lab.local,administrator,dllhost.exe,C:\Windows\SysWOW64\,2608,3118D0D91183AE58597B81F04526EE749DE87EF9,svchost.exe,C:\Windows\System32\,616
+lrdc.lab.local,administrator,powershell.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,2316,9FA7C81107858AA5E15660BA0640D80C68E8E9CB,explorer.exe,C:\Windows\,2832
+lrdc.lab.local,administrator,ServerManager.exe,C:\Windows\System32\,2704,CD398808325F4949EA3D3D7CC5B953A8D67C8E0A,ServerManagerLauncher.exe,C:\Windows\System32\,2580
+lrdc.lab.local,network service,WmiPrvSE.exe,C:\Windows\System32\wbem\,288,5A4C0E82FF95C9FB762D46A696EF9F1B68001C21,svchost.exe,C:\Windows\System32\,616
+lrdc.lab.local,administrator,vmtoolsd.exe,C:\Program Files\VMware\VMware Tools\,3256,89AB8CA84B00E2EA9A5D35686857A2E1B450E4D6,explorer.exe,C:\Windows\,2832
+lrdc.lab.local,network service,msdtc.exe,C:\Windows\System32\,2028,FD10A0730F100B7E8DE5AC840C0E2397A0B10426,services.exe,C:\Windows\System32\,484
+lrdc.lab.local,administrator,userinit.exe,C:\Windows\System32\,2584,EA8746F00C514552532B4A6A50BD425392024A13,winlogon.exe,C:\Windows\System32\,420
+lrdc.lab.local,administrator,powershell.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,1160,9FA7C81107858AA5E15660BA0640D80C68E8E9CB,explorer.exe,C:\Windows\,2488
+lrdc.lab.local,administrator,shutdown.exe,C:\Windows\System32\,3840,DA787EA0B073D6A7928433B424511BCAACA17487,powershell.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,2548
+lrdc.lab.local,dwm-1,dwm.exe,C:\Windows\System32\,748,B01CCC4AD883516BC18BF9EE36DB49286E5E8DD0,winlogon.exe,C:\Windows\System32\,420
+lrdc.lab.local,local service,svchost.exe,C:\Windows\System32\,920,4EEA9BDFE0EB41759D96EC9BD224C4519314A8FA,services.exe,C:\Windows\System32\,484
+lrdc.lab.local,local service,svchost.exe,C:\Windows\System32\,256,4EEA9BDFE0EB41759D96EC9BD224C4519314A8FA,services.exe,C:\Windows\System32\,484
+win-6k98edb90ps,local service,svchost.exe,C:\Windows\System32\,844,7052346F46D41BEF29515C89D1EA099197B867B5,services.exe,C:\Windows\System32\,476
+win-6k98edb90ps,local service,svchost.exe,C:\Windows\System32\,280,7052346F46D41BEF29515C89D1EA099197B867B5,services.exe,C:\Windows\System32\,476
+win-6k98edb90ps,network service,svchost.exe,C:\Windows\System32\,1808,7052346F46D41BEF29515C89D1EA099197B867B5,services.exe,C:\Windows\System32\,476
+win-6k98edb90ps,network service,msdtc.exe,C:\Windows\System32\,2216,26D909845177E3264C3D6038B754AD60EFB7FC21,services.exe,C:\Windows\System32\,476
+win-6k98edb90ps,network service,WmiPrvSE.exe,C:\Windows\System32\wbem\,1732,FFB630C28E37503B54549F1CED2F3F8083C4C998,svchost.exe,C:\Windows\System32\,544
+win-6k98edb90ps,administrator,explorer.exe,C:\Windows\,1004,A9470C0B475995525E65AD8EC046C646D5FA25CB,userinit.exe,C:\Windows\System32\,2924
+win-6k98edb90ps,administrator,ServerManager.exe,C:\Windows\System32\,2124,DF0235171FB056A2AAE05E530DB46E34B942234C,ServerManagerLauncher.exe,C:\Windows\System32\,2892
+win-6k98edb90ps,administrator,runonce.exe,C:\Windows\SysWOW64\,3260,9F67686B5643D7770E4A2D0397F24ECD0273B65C,explorer.exe,C:\Windows\,1004
+win-6k98edb90ps,administrator,wlrmdr.exe,C:\Windows\System32\,3672,ADB9A5D3C1075116F8262C4F61E6048AC9B06D93,winlogon.exe,C:\Windows\System32\,412
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3376,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,2932,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,4060,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3616,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3348,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3376,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3076,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3184,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,mmc.exe,C:\Windows\System32\,2912,7EE0B4FC777C9782DB9229CB4B2ADCF570902CD4,explorer.exe,C:\Windows\,1004
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,4072,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,2972,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3996,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,jucheck.exe,C:\Program Files (x86)\Common Files\Java\Java Update\,2812,EA27E0B658A88D74F0E7F64DA9D4715F32997791,jusched.exe,C:\Program Files (x86)\Common Files\Java\Java Update\,3320
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,4092,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3480,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,1408,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,988,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,2296,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,632,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+lrdc.lab.local,administrator,wecutil.exe,C:\Windows\System32\,4360,972B94C676A6323EB8A2655D2808CBCEC6B392E5,powershell_ise.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,3936
+lrdc.lab.local,administrator,wecutil.exe,C:\Windows\System32\,4276,972B94C676A6323EB8A2655D2808CBCEC6B392E5,powershell_ise.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,3936
+lrdc.lab.local,administrator,eventvwr.exe,C:\Windows\System32\,4156,1CBCCBAB8A152EC2F64E910797CED089880F6670,explorer.exe,C:\Windows\,2832
+lrdc.lab.local,administrator,mmc.exe,C:\Windows\System32\,4492,2D2C24CFB55971FBD8863D511A40E9EFADE17F88,eventvwr.exe,C:\Windows\System32\,4156
+lrdc.lab.local,administrator,wecutil.exe,C:\Windows\System32\,4944,972B94C676A6323EB8A2655D2808CBCEC6B392E5,powershell_ise.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,3936
+lrdc.lab.local,administrator,explorer.exe,C:\Windows\,2488,2FD807AC9A6ABD1C4FBE1F14922731B3EDA213FF,userinit.exe,C:\Windows\System32\,2584
+lrdc.lab.local,administrator,shutdown.exe,C:\Windows\System32\,3184,DA787EA0B073D6A7928433B424511BCAACA17487,explorer.exe,C:\Windows\,2488
+lrdc.lab.local,administrator,ServerManager.exe,C:\Windows\System32\,3296,CD398808325F4949EA3D3D7CC5B953A8D67C8E0A,ServerManagerLauncher.exe,C:\Windows\System32\,2848
+lrdc.lab.local,administrator,chrome.exe,C:\Program Files (x86)\Google\Chrome\Application\,3328,0EBA696A99C0CA9DDEEDCE27957D30E27216A32D,explorer.exe,C:\Windows\,2488
+lrdc.lab.local,administrator,vmtoolsd.exe,C:\Program Files\VMware\VMware Tools\,3700,89AB8CA84B00E2EA9A5D35686857A2E1B450E4D6,explorer.exe,C:\Windows\,2488
+lrdc.lab.local,administrator,dllhost.exe,C:\Windows\SysWOW64\,3820,3118D0D91183AE58597B81F04526EE749DE87EF9,svchost.exe,C:\Windows\System32\,616
+lrdc.lab.local,administrator,ipconfig.exe,C:\Windows\System32\,1864,2424AA0098CAD919D01372AEE3FACE431DB9AB8D,powershell.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,1160
+lrdc.lab.local,administrator,powershell.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,2548,9FA7C81107858AA5E15660BA0640D80C68E8E9CB,explorer.exe,C:\Windows\,2488
+lrdc.lab.local,network service,svchost.exe,C:\Windows\System32\,1380,4EEA9BDFE0EB41759D96EC9BD224C4519314A8FA,services.exe,C:\Windows\System32\,484
+lrdc.lab.local,network service,WmiPrvSE.exe,C:\Windows\System32\wbem\,2944,5A4C0E82FF95C9FB762D46A696EF9F1B68001C21,svchost.exe,C:\Windows\System32\,616
+lrdc.lab.local,administrator,WerFault.exe,C:\Windows\System32\,2944,1A24E57E9735EDD89543062D73C3A3BE1610F9A2,svchost.exe,C:\Windows\System32\,3600
+lrdc.lab.local,administrator,WerFault.exe,C:\Windows\System32\,3748,1A24E57E9735EDD89543062D73C3A3BE1610F9A2,svchost.exe,C:\Windows\System32\,3600
+lrdc.lab.local,dwm-1,dwm.exe,C:\Windows\System32\,744,B01CCC4AD883516BC18BF9EE36DB49286E5E8DD0,winlogon.exe,C:\Windows\System32\,420
+lrdc.lab.local,local service,svchost.exe,C:\Windows\System32\,936,4EEA9BDFE0EB41759D96EC9BD224C4519314A8FA,services.exe,C:\Windows\System32\,484
+lrdc.lab.local,network service,svchost.exe,C:\Windows\System32\,1372,4EEA9BDFE0EB41759D96EC9BD224C4519314A8FA,services.exe,C:\Windows\System32\,484
+lrdc.lab.local,administrator,userinit.exe,C:\Windows\System32\,2820,EA8746F00C514552532B4A6A50BD425392024A13,winlogon.exe,C:\Windows\System32\,420
+lrdc.lab.local,administrator,ipconfig.exe,C:\Windows\System32\,2480,2424AA0098CAD919D01372AEE3FACE431DB9AB8D,powershell.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,2316
+lrdc.lab.local,network service,msdtc.exe,C:\Windows\System32\,3356,FD10A0730F100B7E8DE5AC840C0E2397A0B10426,services.exe,C:\Windows\System32\,484
+win-6k98edb90ps,dwm-1,dwm.exe,C:\Windows\System32\,664,BEFA5CF53D4C698FEFBB707F23D9C17D742BF0C6,winlogon.exe,C:\Windows\System32\,412
+lrdc.lab.local,administrator,WerFault.exe,C:\Windows\System32\,5340,1A24E57E9735EDD89543062D73C3A3BE1610F9A2,svchost.exe,C:\Windows\System32\,5904
+win-6k98edb90ps,administrator,javaws.exe,C:\Program Files (x86)\Java\jre1.8.0_144\bin\,3628,5C8885EAB1B7F9A63BDADC309F0E07957D259AA5,jucheck.exe,C:\Program Files (x86)\Common Files\Java\Java Update\,2812
+win-6k98edb90ps,administrator,jp2launcher.exe,C:\Program Files (x86)\Java\jre1.8.0_144\bin\,3116,A93DD5BC6F27512C01A9A12B4130C3078F6EDBA6,javaws.exe,C:\Program Files (x86)\Java\jre1.8.0_144\bin\,3628
+win-6k98edb90ps,administrator,WerFault.exe,C:\Windows\System32\,3468,A2DE0033E829EC651C1C406D5ECA1DE2E18C8D38,svchost.exe,C:\Windows\System32\,1692
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3980,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,4012,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,userinit.exe,C:\Windows\System32\,2924,301638BE4F53941F737B470E48DFD0DE0842AE9B,winlogon.exe,C:\Windows\System32\,412
+win-6k98edb90ps,administrator,shutdown.exe,C:\Windows\System32\,2752,BC95B18EDC07B12B56E7FC177356631A1EDD23F0,explorer.exe,C:\Windows\,1004
+win-6k98edb90ps,administrator,dllhost.exe,C:\Windows\SysWOW64\,2624,2BB3A1C63CC3B09AE7C8AD45FF2F437CAD4B7A97,svchost.exe,C:\Windows\System32\,544
+win-6k98edb90ps,administrator,chrome.exe,C:\Program Files (x86)\Google\Chrome\Application\,2668,0EBA696A99C0CA9DDEEDCE27957D30E27216A32D,explorer.exe,C:\Windows\,1004
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,2548,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,vmtoolsd.exe,C:\Program Files\VMware\VMware Tools\,3224,89AB8CA84B00E2EA9A5D35686857A2E1B450E4D6,explorer.exe,C:\Windows\,1004
+win-6k98edb90ps,administrator,jusched.exe,C:\Program Files (x86)\Common Files\Java\Java Update\,3320,8C74FA371BB90F29A7E2E467591E84DCA7836B87,runonce.exe,C:\Windows\SysWOW64\,3260
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3592,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,1000,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3532,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3496,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3712,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3184,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,3976,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,Configure-SMRemoting.exe,C:\Windows\System32\,2964,98429424A6DBFC101E8FBA95F6B794F5A4587901,ServerManager.exe,C:\Windows\System32\,2124
+win-6k98edb90ps,administrator,chrome.exe,C:\Program Files (x86)\Google\Chrome\Application\,4008,0EBA696A99C0CA9DDEEDCE27957D30E27216A32D,explorer.exe,C:\Windows\,1004
+lrdc.lab.local,administrator,wecutil.exe,C:\Windows\System32\,208,972B94C676A6323EB8A2655D2808CBCEC6B392E5,powershell_ise.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,3936
+lrdc.lab.local,administrator,powershell_ise.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,3936,4EF06B02507069B66C4DAB7F6219D2B554BF4970,explorer.exe,C:\Windows\,2832
+lrdc.lab.local,administrator,wecutil.exe,C:\Windows\System32\,2204,972B94C676A6323EB8A2655D2808CBCEC6B392E5,powershell_ise.exe,C:\Windows\System32\WindowsPowerShell\v1.0\,3936
