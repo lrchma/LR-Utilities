@@ -1,0 +1,40 @@
+﻿FullName
+Audit/Authentication Success
+Audit/Authentication Failure
+Audit/Access Success
+Audit/Access Failure
+Audit/Account Created
+Audit/Account Deleted
+Audit/Other Audit Success
+Audit/Account Modified
+Audit/Access Granted
+Audit/Access Revoked
+Audit/Startup and Shutdown
+Audit/Policy
+Audit/Configuration
+Audit/Other Audit Failure
+Audit/Other
+Security/Reconnaissance
+Security/Suspicious
+Security/Misuse
+Security/Attack
+Security/Malware
+Security/Denial of Service
+Security/Compromise
+Security/Vulnerability
+Security/Failed Attack
+Security/Failed Denial of Service
+Security/Failed Malware
+Security/Failed Suspicious
+Security/Failed Misuse
+Security/Failed Activity
+Security/Activity
+Security/Other
+Ops/Critical
+Ops/Error
+Ops/Warning
+Ops/Information
+Ops/Network Allow
+Ops/Network Deny
+Ops/Network Traffic
+Ops/Other

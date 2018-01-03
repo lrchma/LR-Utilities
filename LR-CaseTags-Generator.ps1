@@ -77,7 +77,7 @@ try
 
     #Last VALUES group for insert will have trailing comma which we need strip off
     write-output "/* INSERT Mitre Case Types */"
-    write-output "INSERT INTO [LogRhythm_CMDB].[dbo].[Tag] VALUES $($b.Substring(0,$b.Length-0))"
+    write-output "INSERT INTO [LogRhythm_CMDB].[dbo].[Tag] VALUES $($b.Substring(0,$b.Length-1))"
     write-output "`n"
 
     # *************************************
@@ -90,7 +90,7 @@ try
 
     #Last VALUES group for insert will have trailing comma which we need strip off
     write-output "/* INSERT LogRhythm Classifications */"
-    write-output "INSERT INTO [LogRhythm_CMDB].[dbo].[Tag] VALUES $($d.Substring(0,$d.Length-0))"
+    write-output "INSERT INTO [LogRhythm_CMDB].[dbo].[Tag] VALUES $($d.Substring(0,$d.Length-1))"
     write-output "`n"
 
     # ******************************************
@@ -103,7 +103,7 @@ try
 
     #Last VALUES group for insert will have trailing comma which we need strip off
     write-output "/* INSERT LogRhythm Classification Types */"
-    write-output "INSERT INTO [LogRhythm_CMDB].[dbo].[Tag] VALUES $($f.Substring(0,$f.Length-0))"
+    write-output "INSERT INTO [LogRhythm_CMDB].[dbo].[Tag] VALUES $($f.Substring(0,$f.Length-1))"
     write-output "`n"
 
 
@@ -124,3 +124,6 @@ try
     catch [System.SystemException] {
     $_ 
 }
+
+
+#Todo - should have the above a function, and passed the array to that function, but quick and dirty is as quick and dirty does!
