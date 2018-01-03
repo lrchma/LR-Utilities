@@ -3917,7 +3917,7 @@ Reload Command Executed	Information
 Replay Rollover Detected	Information
 LU No Xlate	Error
 Adjusting IPSec Tunnel MTU	Information
-"Leaving Allow Mode, URL Server Is Up"	Warning
+Leaving Allow Mode URL Server Is Up	Warning
 Unable To Communicate With Authentication Server	Error
 Connection Teardown	Network Traffic
 Built TCP Connection ID	Network Traffic
@@ -5838,7 +5838,7 @@ General Policy Change	Other Audit
 Failed Service Installation	Error
 Failed Scheduled Task Creation	Other Audit Failure
 Primary Token Assigned	Information
-"Denied New VPN Tunnel, Limit Exceeded"	Error
+Denied New VPN Tunnel Limit Exceeded	Error
 Permitted ICMP Packet	Network Traffic
 Permitted TCP Packet	Network Traffic
 Permitted UDP Packet	Network Traffic
@@ -5887,7 +5887,7 @@ AP Broadcasting SSID	Other Security
 Invalid Method In Request	Error
 Parameter Missing In Request	Error
 General Negotiation Error	Error
-"Creating Shared Secret, Passphrase, Or Password"	Information
+Creating Shared Secret Passphrase Or Password	Information
 Configuration Success	Other Audit Success
 Error String Not Specified Yet	Error
 General IKE Ticket Exchange	Warning
@@ -7656,7 +7656,7 @@ Memcap Exceeded	Error
 Ipv6 Packet Exceeded Ttl Limit	Network Traffic
 Fixed Scale Scanner Limit Exceeded	Warning
 Sliding Scale Scanner Limit Exceeded	Warning
-"Bad Fragment Size, Packet Size Is Negative"	Network Traffic
+Bad Fragment Size Packet Size Is Negative	Network Traffic
 Fragmentation Overlap	Other Security
 Unknown Command	Other Security
 FTP Command Channel Encrypted	Information
@@ -8095,16 +8095,16 @@ IRC connection	Activity
 Encoded Javascriptdocument.Write - Usually Hostile	Activity
 WEB-MISC LINK Method	Activity
 MS04-032 Bad EMF file	Activity
-"Unusual Port 139 traffic, Potl Scan or Infection"	Activity
+Unusual Port 139 traffic Potl Scan or Infection	Activity
 RDP connection request	Activity
 NTDump Session Established Reg-Entry port 445	Activity
 MS SQL Server OLEDB asp error	Activity
-"Unusual Port 445 traffic, Potl Scan or Infection"	Activity
+Unusual Port 445 traffic Potl Scan or Infection	Activity
 UPX Compressed File Download - Possible Worm	Activity
 libPNG - Width exceeds limit	Activity
 IE process injection iexplore.exe Execabl download	Activity
 IRC PRIVMSG command	Activity
-"Unusual Port 1433 traffic, Potl Scan or Infection"	Activity
+Unusual Port 1433 traffic Potl Scan or Infection	Activity
 libPNG - Height exceeds limit	Activity
 Chunks Accepted	Activity
 IRC USER command	Activity
@@ -8118,18 +8118,18 @@ RDP connection confirm	Activity
 TCP Reset from MS Exch after Chnkd data	Activity
 Cisco Device in Config Mode	Activity
 Mozilla FTP View CSS Vulnerability	Activity
-"Unusual Port 137 traffic, Potl Scan or Infection"	Activity
+Unusual Port 137 traffic Potl Scan or Infection	Activity
 SSH Server Banner Detected on Unusual Port	Activity
 IRC NICK command	Activity
 Psybnc IRC Server Connection	Activity
 Unusually fast Trmnl Svr Trfc Potl Scan or Infect	Activity
 Cisco Device New Config Built	Activity
-"Unusual Port 135 traffic, Potl Scan or Infection"	Activity
+Unusual Port 135 traffic Potl Scan or Infection	Activity
 ORACLE OLEDB asp error	Activity
 SSHv2 Server KEX Detected on Unusual Port	Activity
 IRC Authorization Message	Activity
 SSH Client Banner Detected on Unusual Port	Activity
-"Unusual Port 1434 traffic, Potl Scan or Infection"	Activity
+Unusual Port 1434 traffic Potl Scan or Infection	Activity
 SSHv2 Client KEX Detected on Unusual Port	Activity
 IFRAME ExecCommand vulnerability	Activity
 MS Exch Link State Routing Chunk (maybe MS05-021)	Activity
@@ -9145,7 +9145,7 @@ XML Hex Dump Header	Information
 XML Low-Level Packet Header Decoding	Information
 XML High-Level Packet Header Decoding	Information
 Running Config Saved To Startup Config	Warning
-"No SNMP Host Defined, Traps Are Queued"	Warning
+No SNMP Host Defined Traps Are Queued	Warning
 Write Operation Failed	Error
 Read Operation Failed	Error
 Need SNMP-Svr Sys-Shutdown For SNMP Reboot	Error
@@ -9541,7 +9541,7 @@ Garbage List Route Addition Failure	Error
 General ARP Information	Information
 General Hardware Configuration Information	Information
 Web Switching Module Not Inadvertently Added MLT	Information
-"Peer Forwarding Stopped, Unable Turn On IP Routing"	Warning
+Peer Forwarding Stopped Unable Turn On IP Routing	Warning
 UDP Port Addition Failed	Warning
 Remove And Re-Insert Card	Error
 Hardware Removed	Error
@@ -12087,7 +12087,7 @@ Two Networks With Same IP Address	Critical
 Invalid IP address	Critical
 Self Test Failure While Switch Is Booting Up	Critical
 Module Successfully Hot Swapped In the Slot	Critical
-"Engine ID Changed, New Value Needs To Be Entered"	Critical
+Engine ID Changed New Value Needs To Be Entered	Critical
 Boots Value Of SNMP Engine Maxed Out	Critical
 XRRP Could Not Allocate Memory Of Specified Size	Critical
 Multicast Address Cannot Be Added As Destination	Critical
@@ -12191,10 +12191,10 @@ LACP Port Blocked When Re-Negotiating With Peer	Information
 LACP Trunk Port Moved To Another Trunk Group	Information
 LACP Trunk Port Moved To The Specified Trunk Group	Information
 LACP Port Has Been Removed From The Trunk Group	Information
-"Transceiver Change, Reboot Switch"	Information
+Transceiver Change Reboot Switch	Information
 New Transceiver Is Invalid Type	Warning
 Transceiver Changed In The Specified Port	Information
-"Gigabit-T Transceiver On Port, Invalid Mode Change"	Information
+Gigabit-T Transceiver On Port Invalid Mode Change	Information
 Server Timed Out	Information
 Device Timed Out While Waiting For SNTP Broadcast	Information
 Time Was Updated By Specified Number Of Seconds	Information
@@ -12244,9 +12244,9 @@ Router May Be Sending Incorrectly PIM Packets	Information
 More Than 1022 Active Flows	Information
 VLAN Configured	Information
 Error Regarding The PIM Socket	Error
-"Manual Reset, Clear Button Pressed"	Information
+Manual Reset Clear Button Pressed	Information
 Different Password Was Used To Access The Switch	Information
-"File Transfer Was Aborted, Insufficient Memory"	Information
+File Transfer Was Aborted Insufficient Memory	Information
 Error In SCP Session	Error
 Module Shutdown Process Is Complete	Information
 The Module Has Started The Shutdown Process	Information
@@ -12291,7 +12291,7 @@ Virtual Router On VLAN Took Control Of Backup IPs	Information
 VR Preempted By Owner Or Higher-Priority Master	Information
 Virtual IP Address Is Duplicated On The Network	Information
 USB Successfully Completed The File Transfer	Information
-"Transfer Interrupted, Low Memory On The USB Device"	Information
+Transfer Interrupted Low Memory On The USB Device	Information
 Port Could Not Be Configured To Block IP Address	Information
 Source Address Has Been Unblocked	Information
 Software Package Installed With License Key	Information
@@ -12405,12 +12405,12 @@ Xmodem Transfer Was Completed	Warning
 Xmodem Device Unable To Connect To Remote Device	Warning
 Configuration File Is Set To Be Overwritten	Warning
 Unable To Synchronize With The Remote Device	Warning
-"Xmodem File Transfer Aborted, Incorrect File"	Warning
+Xmodem File Transfer Aborted Incorrect File	Warning
 Unable To Read Header In Packet From Remote Device	Warning
 Unable To Read Data From Remote Device	Warning
 The Xmodem Transfer Filename Is Too Long	Warning
 Remote Device Appended Transfer Data To File	Warning
-"Transfer Timed Out, Xmodem Device Could Not Sync"	Warning
+Transfer Timed Out Xmodem Device Could Not Sync	Warning
 The Xmodem Transfer Aborted	Warning
 Unexpected Character Was Received From The Remote	Warning
 Configuration Summary Record Is Missing	Warning
@@ -12429,19 +12429,19 @@ SNMP Manager Address In The Row Is Not Active	Warning
 SNMP Trap Configured In The Row Is Not Active	Warning
 Alarms File Or The Events File Is Corrupt	Warning
 Port Not Added To The Trunk	Warning
-"IP Lockdown Not Applied To Port, Lack Of Resources"	Warning
+IP Lockdown Not Applied To Port Lack Of Resources	Warning
 IP Lockdown Already Configured On The Port	Warning
-"IP Lockdown Can Not Be Modified, Already Active"	Warning
+IP Lockdown Can Not Be Modified Already Active	Warning
 Sufficient Hardware Resources Not Available	Warning
 Management Module Failed Self-Test	Warning
 Module Failed To Receive Heartbeats	Warning
-"Switchover Occurred, Hardware Or Software Failure"	Warning
+Switchover Occurred Hardware Or Software Failure	Warning
 Management Module Software Version Not Compatible	Warning
 Shutdown Request Ignored	Warning
 Specified Slot Failed Self-Test	Warning
 STP Not Enabled Because Multiple VLANs Are Defined	Warning
 MAC Address Table Is Full	Warning
-"Multicast Table Full, IGMP MAC Address Not Added"	Warning
+Multicast Table Full IGMP MAC Address Not Added	Warning
 Querier Initialization Failed	Warning
 Initialization On Specified Port Failed	Warning
 Num Of Domains Reached The Maximum Limit Allowed	Warning
@@ -12463,7 +12463,7 @@ Load Balancing Version Not Supported	Warning
 Carrier Sense Is Stuck On Specific Port	Warning
 Transceiver Error On Specific Port	Error
 Port Is Being Reset Because Of A Remote Fault	Warning
-"Self-Test Failed On The Port, Port Is Not Usable"	Warning
+Self-Test Failed On The Port Port Is Not Usable	Warning
 Invalid Transceiver In The Specified Port	Warning
 Boot ROM Self-Test Failed	Warning
 Communication With Specific Slot Lost	Warning
@@ -12491,7 +12491,7 @@ The Specified Non-Mesh Port Received A Packet	Warning
 Certain Switches Cannot Be Part Of A Mesh	Warning
 The Maximum Hop Count Was Exceeded	Warning
 Port Disabled Due To An Invalid Peer In The Link	Warning
-"Protocol Is Not Supported, Upgrade Firmware"	Warning
+Protocol Is Not Supported Upgrade Firmware	Warning
 Mismatch In Configuration Type Across The Mesh	Warning
 Invalid Meshing Packet Received	Network Traffic
 SSL Http Failed To Start	Warning
@@ -12524,7 +12524,7 @@ Transceiver Type Installed Is Not Supported	Warning
 Transceiver Installed In The Port Is Not Supported	Warning
 The Slot Is Not Receiving Sufficient Power.	Warning
 Module Installed In The Slot Failed Its Self-Test	Warning
-"New Module Installed, Reboot The Switch"	Warning
+New Module Installed Reboot The Switch	Warning
 Over-Temperature Condition In Switch Detected	Warning
 An NCI Error In Slot Detected	Error
 Failure In The Redundant Power Supply	Warning
@@ -12573,7 +12573,7 @@ A C-RP Advertisement Send Failure	Warning
 Illegal State/Event Combination	Warning
 Config Of Static RP For Multicast Group Failure	Warning
 VRRP Received An Illegal Event/State Combination	Warning
-"VRRP Packet Received, Less Than The Min Size"	Warning
+VRRP Packet Received Less Than The Min Size	Warning
 VR Received VRRP Packet With Checksum Error	Error
 VRRP Packet Received With A Wrong Version Number	Warning
 VRRP Packet Received For VR That Does Not Exist	Warning
@@ -12583,7 +12583,7 @@ VR Dropped A VRRP Packet That Was Invalid	Warning
 VRRP Packet Received Does Not Match Virtual IP	Warning
 VRRP Packet Received Does Not Have Any VRS	Warning
 VRRP Packet Received From Duplicate Master VR	Warning
-"File Transfer Stopped, Missing File Or Invalid ID"	Warning
+File Transfer Stopped Missing File Or Invalid ID	Warning
 TFTP Request Failed Due To Resource Error	Error
 Error Occurred In ProCurve Software Licensing	Error
 Module Failed Its Self-Test And Is Not Usable	Warning
@@ -12656,7 +12656,7 @@ Autorun Can Not Open The Directory	Warning
 Autorun Can Not Create The Directory	Warning
 There Is A Command File Parsing Error	Error
 The Execution Of The Cli Command Failed	Warning
-"Command Failed To Execute, Lack Of Resources"	Warning
+Command Failed To Execute Lack Of Resources	Warning
 External Power Supply Is Providing Power	Warning
 External Power Supply No Longer Connected	Warning
 Max Ingress Bandwidth Conflict In Attempted Set	Warning
@@ -12829,7 +12829,7 @@ An Unrecoverable Error Occurred	Critical
 AAA Internal Error	Critical
 AIM In Slot Not Supported By This HW Revision	Critical
 AIM Installed Is Not Supported By This Platform	Critical
-"Alert, AIC Error Message"	Critical
+Alert AIC Error Message	Critical
 ATM AIM Device Would Not Reset Properly	Critical
 ATM AIM Element Number Specified Not Present	Critical
 ATM AIM Firmware Failed To Respond To The Command	Critical
@@ -12967,7 +12967,7 @@ COT-1-DSP_MEM	Critical
 COT-1-DSP_Q	Critical
 COT-1-INITSYS	Critical
 Could_Not_Locate_ATM_AIM	Critical
-"Critical, AIC Error Message"	Critical
+Critical AIC Error Message	Critical
 CRYPTO-0-AUDITFAIL	Critical
 CRYPTO-0-SELF_TEST_FAILURE	Critical
 CSM-1-CAS_ALLOC_FAIL	Critical
@@ -14057,7 +14057,7 @@ A Hardware Or Software Error Occurred	Error
 A Memory Allocation Failure Has Occurred	Error
 A Parity Error Occurred On The PCI Bus	Error
 A Read Access Failed	Error
-"AAA ACCT Process Suspended, Insufficient Memory"	Error
+AAA ACCT Process Suspended Insufficient Memory	Error
 AAL5 Subsystem Encountered An Internal Error	Error
 AC Mgr Received Message With Missing Information	Error
 Ahdlc Driver Could Not Allocate Mem For Channel	Error
@@ -14643,7 +14643,7 @@ DOT11-3-RF_LOOPBACK_FREQ_FAILURE	Error
 DOT11-3-TKIP_MIC_FAILURE_REPEATED	Error
 DOT11-3-TX_PWR_OUT_OF_RANGE	Error
 DRIP-3-DRIPFAIL	Error
-"Dropping Accounting Request, Not Enough Mem"	Error
+Dropping Accounting Request Not Enough Mem	Error
 DS_MODEM-3-BADCB	Error
 DS_MODEM-3-BADIFNUMBER	Error
 DS_MODEM-3-FLOW_CONTROL	Error
@@ -14808,9 +14808,9 @@ Error Encountered During Attachment Circuit Config	Error
 Error In Attachment Circuit Sub-Block Modification	Error
 Error In The PNNI Routing Subsystem	Error
 Error While Processing The Tx Ack Command	Error
-"Error, AIC Error Message"	Error
-"Error, Client Attempt To Add Too Many Methods"	Error
-"Error, Could Not Establish Port Information"	Error
+Error AIC Error Message	Error
+Error Client Attempt To Add Too Many Methods	Error
+Error Could Not Establish Port Information	Error
 Errors Occurred During Busyout	Error
 ESWILP_CFG-3-SWITCH_MODULE_COUNT	Error
 ESWMOD-3-INITFAILURE	Error
@@ -15353,7 +15353,7 @@ INTERFACE_API-3-NOADDSUBBLOCK	Error
 INTERFACE_API-3-NODESTROYSUBBLOCK	Error
 INTERFACE_API-3-NOSUBBLOCK	Error
 INTERFACE_API-3-SUBNUMDBERR	Error
-"Internal Buffer Exceeded, Possibly Corrupting Mem"	Error
+Internal Buffer Exceeded Possibly Corrupting Mem	Error
 Internal Corrupted Data Structure Found	Error
 Internal Error Occurred	Error
 Invalid Packet Voice/Data Module Cookie Detected	Error
@@ -16279,7 +16279,7 @@ R4K_MP-3-CPUMON_QFULL	Error
 R4K_MP-3-CPUMON_QKEEPALIVE_EXCEEDED	Error
 R4K_MP-3-CPUMON_RECURSION	Error
 RAC-3-RACIPL	Error
-"RADIUS Unable To Handle Request, Insufficient Mem"	Error
+RADIUS Unable To Handle Request Insufficient Mem	Error
 RADIUS-3-ALLDEADSERVER	Error
 RADIUS-3-CANNOT_OPEN_SOCKET	Error
 RADIUS-3-CORRUPTCONTEXT	Error
@@ -16663,7 +16663,7 @@ SNMP-3-INTERRUPT_CALL_ERR	Error
 Software Error During Closure Of An SVC	Error
 Software Error Occurred During Creation Of An Svc	Error
 Software Or Hardware Error Occurred	Error
-"Software Or Hardware Error, Packet Too Big"	Error
+Software Or Hardware Error Packet Too Big	Error
 Software_Component_In_Router_Need_Mem_Optimization	Error
 Software_Could_Not_Identify_The_Interface_Card	Error
 Software_Could_Not_Recognize_The_Interface_Chips	Error
@@ -17740,14 +17740,14 @@ Packet Overflow	Warning
 Boomerang Client Not Receiving Valid Response	Network Traffic
 Buffer Contains Max Configured Num Of Packets	Network Traffic
 FCIP Driver Could Not Consume Packet Due To Errors	Network Traffic
-"Invalid Packet On Queue, Packet Dropped"	Network Traffic
+Invalid Packet On Queue Packet Dropped	Network Traffic
 Packet Bigger Than Configured/Default Buffer Size	Network Traffic
 Packet Exceeds MTU Size	Network Traffic
 Packet Was Dropped By The NextPort Modem Driver	Network Traffic
-"Queue Contains Invalid Datagram, Packet Dropped"	Network Traffic
-"Rate Limiting Enabled, Packets Exceed Amount"	Network Traffic
+Queue Contains Invalid Datagram Packet Dropped	Network Traffic
+Rate Limiting Enabled Packets Exceed Amount	Network Traffic
 Switch Module Tx Queue Ful Packets Being Dropped	Warning
-"Tunnel Cannot Handle Packet Type, Packet Dropped"	Network Traffic
+Tunnel Cannot Handle Packet Type Packet Dropped	Network Traffic
 Active Links Were Added Or Removed From The Group	Warning
 AIC Network Module May Be Incompatible	Warning
 Argument Of HTTP Packet Request Regex Matched	Warning
@@ -19067,7 +19067,7 @@ VSI_M-4-AVAILCHANWARN	Warning
 VSI_M-5-UPDELAY	Warning
 VTSP-4-VTSP_PLAR_TIE_FAILED	Warning
 Waiting For Configuration Confirmation From User	Warning
-"Warning, AIC Warning Message"	Warning
+Warning AIC Warning Message	Warning
 WCCP-5-SERVICEFOUND	Warning
 X25-4-BFEIP	Warning
 X25-5-UPDOWN	Warning
@@ -22948,10 +22948,10 @@ NetWare : Object Registered A File System Hook	Other Audit Success
 eDir : A Servers Address Has Changed	Information
 eDir : A Backlink Procedure Has Completed	Information
 eDir : A Limber Operation Has Completed	Other Audit Success
-"eDir : Limber Op Complete, Initialized, New RDN"	Other Audit Success
-"eDir : Limber Op Complete, Initialized, No New RDN"	Other Audit Success
-"eDir : Limber Op Done, Not Initialized, No New RDN"	Other Audit Success
-"eDir : Limber Op Done, Not Initialized, New RDN"	Other Audit Success
+eDir : Limber Op Complete Initialized New RDN	Other Audit Success
+eDir : Limber Op Complete Initialized No New RDN	Other Audit Success
+eDir : Limber Op Done Not Initialized No New RDN	Other Audit Success
+eDir : Limber Op Done Not Initialized New RDN	Other Audit Success
 eDir : A Purge Operation Has Ended On Partition	Information
 NetWare : A Dhost Module Has Been Loaded	Other Audit Success
 eDir : General eDirectory Log	Information
@@ -23088,7 +23088,7 @@ ID 38B0 : System Switched To Master Mode	Information
 ID 38B1 : System Switched To Master Mode	Information
 ID 38B2 : System Switched To Master Mode	Information
 ID 38B4 : Graceful Take-Over	Information
-"ID 38B5 : Slave Took Over, Master Is Dead"	Information
+ID 38B5 : Slave Took Over Master Is Dead	Information
 ID 38B6 : Master Passed Control To Slave	Information
 ID 38B7 : Worker Node Went Into Slave Mode	Information
 ID 38B8 : Master Passed Master Role To A Worker	Information
@@ -23253,8 +23253,8 @@ A Packet Was Received On An Interface	Network Traffic
 Packet Not Received Due To MAC Violation	Error
 Packet Received On Interface With Damaged MAC	Error
 A Packet Was Sent On The Interface	Network Traffic
-"A Packet Was Not Sent, Due To A MAC Violation"	Error
-"Packet Not Sent, Because MAC Label Was Too Large"	Error
+A Packet Was Not Sent Due To A MAC Violation	Error
+Packet Not Sent Because MAC Label Was Too Large	Error
 Change MAC Labels Disallowed Lack Of MAC Privilege	Error
 Extended Process Accounting Information Events	Information
 Extended Session Accounting Information	Information
@@ -26933,7 +26933,7 @@ Unable To Perform Zone Transfer	Warning
 Netscreen Warning Message	Warning
 Nginx Warning Message	Warning
 Server Returned 404 (Reported In The Accesslog)	Warning
-"Invalid Uri, File Name Too Long"	Warning
+Invalid Uri File Name Too Long	Warning
 File Deleted Unable To Retrieve Checksum	Warning
 Php Warning Message	Warning
 Pix Alert Message	Warning
@@ -27620,7 +27620,7 @@ FTP - 530 - Cmd Not Accepted - Not Logged In	Error
 FTP - 504 - Cmd Not Accepted - Invalid Parameter	Error
 Winsock 10066 : Directory Not Empty	Warning
 FTP - 511 - SSH Disconnect By Application	Information
-"Winsock 10068 : Too Many Users, Server Is Full"	Information
+Winsock 10068 : Too Many Users Server Is Full	Information
 Failed To Establish Connection To Repository	Error
 Number Of Users Nearing License Limit	Warning
 Challenge Request Challenged	Other Audit
@@ -29750,7 +29750,7 @@ AIE: NIST 800-53: Int Host Comp + Audit Log Clear	Compromise
 AIE: NIST 800-53 : Internal : Spamming System Rule	Compromise
 AIE: NIST 800-53: Int Account Probe On Mltpl Hosts	Compromise
 AIE: NIST 800-53: Int Account Probe On Single Host	Compromise
-"AIE: NIST 800-53: Int Acct Created, Used, Deleted"	Suspicious
+AIE: NIST 800-53: Int Acct Created Used Deleted	Suspicious
 AIE: NIST 800-53: Int Brute Force Sngl Origin Host	Compromise
 AIE: NIST 800-53: Int Brute Force Dist Origin Host	Compromise
 AIE: NIST 800-53: Int Host Comp + Crit Data Dest	Compromise
@@ -30223,7 +30223,7 @@ AIE: CSF: Vendor Act Access Failure Rule	Access Failure
 AIE: CSF: Vendor Act Auth Failure Rule	Authentication Failure
 AIE: CSF: Vulnerability Rule	Vulnerability
 AIE: CSF: Int Brute Force Dist Origin Host	Compromise
-"AIE: CSF: Int Acct Created, Used, Deleted"	Suspicious
+AIE: CSF: Int Acct Created Used Deleted	Suspicious
 General Registry Monitor Event	Activity
 Registry Monitoring Event - Add	Activity
 Registry Monitoring Event - Delete	Activity
@@ -30421,7 +30421,7 @@ AIE: ISO-27001: System Time Change After Compromis	Compromise
 AIE: ISO-27001: Data Exfiltration Rule	Compromise
 AIE: ISO-27001: Attack then External Connection Ru	Compromise
 AIE: ISO-27001: LogRhythm Silent Log Source Error	Warning
-"AIE: ISO-27001: Int Acct Created, Used, Deleted"	Suspicious
+AIE: ISO-27001: Int Acct Created Used Deleted	Suspicious
 AIE: ISO-27001: Priv Group Access Granted Rule	Access Granted
 AIE: ISO-27001: Recent Disable Acct + Acs Success	Suspicious
 AIE: ISO-27001: Attack then Inbound Traffic	Suspicious
@@ -30480,7 +30480,7 @@ Analysis Complete	Information
 Exception Event	Information
 AIE: NERC-CIP: Physical Access Failure Rule	Access Failure
 AIE: NERC-CIP: Physical Access Success Rule	Access Success
-"AIE: NERC-CIP: Int Acct Created, Used, Deleted"	Suspicious
+AIE: NERC-CIP: Int Acct Created Used Deleted	Suspicious
 AIE: NERC-CIP: Priv Group Access Granted Rule	Access Granted
 AIE: NERC-CIP: VPN Node Registration Fail (Auth)	Authentication Failure
 AIE: NERC-CIP: VPN Node Registration Fail (unAuth)	Authentication Failure
@@ -30604,7 +30604,7 @@ AIE: SOX: Data Exfiltration Rule	Compromise
 AIE: SOX: Data Destruction Rule	Compromise
 AIE: SOX: Physical Access Rule	Access Failure
 AIE: SOX: FIM Critical/Error/Information Alert	Error
-"AIE: SOX: Acct Created, Used, Deleted Alert"	Suspicious
+AIE: SOX: Acct Created Used Deleted Alert	Suspicious
 AIE: SOX: Vendor Auth Failure Alert Rule	Authentication Failure
 AIE: SOX: Vendor Act Access Fail Alert Rule	Access Failure
 AIE: SOX: TST Environment Error Alert	Critical
@@ -30681,17 +30681,17 @@ AIE: Progression: to Initial Compromise	Attack
 AIE: Progression: to Command and Control	Attack
 AIE: Progression: to Lateral Movement	Attack
 AIE: Progression: to Target Attainment	Compromise
-"AIE: Progression: to Exfil, Corruption, Disruption"	Compromise
+AIE: Progression: to Exfil Corruption Disruption	Compromise
 AIE: Progression: to Initial Compromise	Attack
 AIE: Progression: to Command and Control	Attack
 AIE: Progression: to Lateral Movement	Attack
 AIE: Progression: to Target Attainment	Compromise
-"AIE: Progression: to Exfil, Corruption, Disruption"	Compromise
+AIE: Progression: to Exfil Corruption Disruption	Compromise
 AIE: Progression: to Initial Compromise	Attack
 AIE: Progression: to Command and Control	Attack
 AIE: Progression: to Lateral Movement	Attack
 AIE: Progression: to Target Attainment	Compromise
-"AIE: Progression: to Exfil, Corruption, Disruption"	Compromise
+AIE: Progression: to Exfil Corruption Disruption	Compromise
 LogRhythm DX Marshall Message Failed	Warning
 LogRhythm DX Invalid Message Format	Warning
 LogRhythm DX Indexing Failures	Error
@@ -30710,7 +30710,7 @@ AIE: MAS: Data Exfiltration Rule	Compromise
 AIE: MAS: Data Destruction Rule	Compromise
 AIE: MAS: Physical Access Rule	Access Failure
 AIE: MAS: FIM Critical/Error/Information Alert	Critical
-"AIE: MAS: Acct Created, Used, Deleted Alert"	Suspicious
+AIE: MAS: Acct Created Used Deleted Alert	Suspicious
 AIE: MAS: Vendor Acct Access Fail Alert	Access Failure
 AIE: MAS: TST Environment Error Alert	Critical
 AIE: MAS: TST Priv Acct Auth Rule	Authentication Failure
@@ -30973,17 +30973,17 @@ AIE: Progression: to Initial Compromise	Attack
 AIE: Progression: to Command and Control	Attack
 AIE: Progression: to Lateral Movement	Attack
 AIE: Progression: to Target Attainment	Compromise
-"AIE: Progression: to Exfil, Corruption, Disruption"	Compromise
+AIE: Progression: to Exfil Corruption Disruption	Compromise
 AIE: Progression: to Initial Compromise	Attack
 AIE: Progression: to Command and Control	Attack
 AIE: Progression: to Lateral Movement	Attack
 AIE: Progression: to Target Attainment	Compromise
-"AIE: Progression: to Exfil, Corruption, Disruption"	Compromise
+AIE: Progression: to Exfil Corruption Disruption	Compromise
 AIE: Progression: to Initial Compromise	Attack
 AIE: Progression: to Command and Control	Attack
 AIE: Progression: to Lateral Movement	Attack
 AIE: Progression: to Target Attainment	Compromise
-"AIE: Progression: to Exfil, Corruption, Disruption"	Compromise
+AIE: Progression: to Exfil Corruption Disruption	Compromise
 AIE: Attainment: Log Cleared	Compromise
 AIE: Compromise: Security Event then Process Start	Compromise
 AIE: Attainment: System Time Change	Compromise
