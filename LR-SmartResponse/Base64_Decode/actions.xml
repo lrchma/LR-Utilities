@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="Powershell Base64 Decode" Guid="f9a15fbd-d4c5-4752-a7e1-0f1eaa6313f2" Version="1" IsLogRhythmPlugin="false">
+  <remv1:Action Name="Base64 Decode" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+  <!-- Base64 Decode -->
+ <remv1:ConstantParameter Name="Script" Switch="-file base64_decode.ps1" Order="1" />
+    <remv1:StringParameter Name="Action" Switch="-action " Order="2">
+      <remv1:DefaultInput>
+        <remv1:StaticInput Value="Decode" />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>
+    <remv1:StringParameter Name="Value" Switch="-value " Order="3" />
+    <remv1:StringParameter Name="Value" Switch="-jsonMode " Order="4">
+      <remv1:DefaultInput>
+        <remv1:StaticInput Value="True" />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>	
+  </remv1:Action> 
+ </remv1:Remediation-Plugin> 
