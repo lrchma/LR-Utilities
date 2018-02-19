@@ -80,7 +80,7 @@ for($i=$aieStartRuleNo; $i -le $aieStopRuleNo; $i++)
 
                     #Needs testing, yet to find default AIE rules that use include/excludes
                     foreach($filterOut in $block.filterIn){
-                        write-output $fitlerOut
+                        write-output $filterOut
                     }
 
                     ##GROUP BY FIELDS
