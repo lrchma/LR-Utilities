@@ -1,0 +1,54 @@
+SUMMARY
+----------------------------------------
+Case Name: AIE: Finance: Unauthorized File Access - Beth
+Case ID: 1111
+Status: Resolved
+Owner: Peter McNaull
+Date Created: 2018-03-09T19:49:20.7490775Z
+Date Due: 2018-03-10T19:47:46.417Z
+Summary: "A file access to a Finance share for a monitored file has occurred by someone outside the Finance department"
+
+COLLABORATORS
+----------------------------------------
+Collaborators: Peter McNaull
+
+RESOLUTION
+----------------------------------------
+Resolution: text
+Date Updated: 2018-03-09T19:57:29.946Z
+Last Updated By: Peter McNaull
+
+EVIDENCE
+----------------------------------------
+Type: alarm
+Date Created: 2018-03-09T19:49:22.08Z
+Date Updated: 2018-03-09T19:49:22.08Z
+Created By: Peter McNaull
+Last Updated By: Peter McNaull
+Alarm ID: 30642
+Alarm Date: 
+Alarm Rule Name: AIE: Finance: Unauthorized File Access
+Alarm RBP: 72
+
+
+Type: log
+Date Created: 2018-03-09T19:51:38.16Z
+Date Updated: 2018-03-09T19:51:38.16Z
+Created By: Peter McNaull
+Last Updated By: Peter McNaull
+Log Count: 1
+
+
+
+ASSOCIATED CASES
+----------------------------------------
+No associated cases.
+
+METRICS
+----------------------------------------
+Created: 2018-03-09T19:49:20.7490775Z
+Completed: 
+Incident: 2018-03-09T19:56:03.9893802Z
+Mitigated: 2018-03-09T19:57:18.7732452Z
+Resolved: 2018-03-09T19:57:30.2978673Z
+Evidence: 2018-03-07T23:35:29.547Z
