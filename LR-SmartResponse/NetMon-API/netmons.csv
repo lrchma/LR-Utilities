@@ -1,0 +1,3 @@
+host,user,password
+1.1.1.1,admin,<api_key_goes_here>
+2.2.2.2,admin,<api_key_goes_here>
