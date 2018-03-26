@@ -85,10 +85,10 @@ for($i=$aieStartRuleNo; $i -le $aieStopRuleNo; $i++)
         
         #AIE Rule Settings
         foreach($object in $psObject){
-            $aa = "{0},`"{1}`",{2},`"{3}`",{4},{5},{6},{7},{8},{9}" -f $object.id, `
-                                                    ($object.alarmRule.name -replace "(^AIE: |, | ,)", "") , ` #replace any commas in the Alarm Rule name
+            $aa = "{0},`"{1}`",{2},`"{3}`",{4},{5},{6},{7},{8},{9}," -f $object.id, `
+                                                    ($object.alarmRule.name -replace "(^AIE: |,)", "") , ` #replace any commas in the Alarm Rule name
                                                     $object.alarmRule.enabled, `
-                                                    (($object.alarmRule.name -replace "(^AIE: |, | ,)", "") | %{ $_ -replace ":(?=\s).*$"}), `
+                                                    (($object.alarmRule.name -replace "(^AIE: |,)", "") | %{ $_ -replace ":(?=\s).*$"}), `   #generate AIE group names
                                                     $object.ruleGroup, `
                                                     ($object.supression -replace ".{3}$"), ` #truncate the extra three zeros on the suppresion
                                                     $object.eventForwardingEnabled, `

@@ -17,8 +17,7 @@ https://github.com/lrchma/LR-Utilities/blob/master/AIE-RulesJSON/9-LR-AIE-CSV-Ex
 SELECT
 MSGSourceType.FullName AS LogSource,
 Classification.[FullName] AS ClassificationType,
-Classification.[Name] AS ClassificationName,
-CommonEvent.[Name] AS CommonEvent 
+Classification.[Name] AS ClassificationName
 FROM [LogRhythmEMDB].[dbo].[MsgClass] Classification
 INNER JOIN [LogRhythmEMDB].[dbo].[CommonEvent] COMMONEVENT ON Classification.MsgClassID = COMMONEVENT.MsgClassID
 INNER JOIN [LogRhythmEMDB].[dbo].[MPERule] MPE ON COMMONEVENT.CommonEventID = MPE.CommonEventID 
@@ -27,7 +26,7 @@ INNER JOIN [LogRhythmEMDB].[dbo].[MPEPolicy] MPEPolicy ON MPERuleToPolicy.MPEPol
 INNER JOIN [LogRhythmEMDB].[dbo].[MsgSourceType] MSGSourceType ON MPEPolicy.MsgSourceTypeID = MSGSourceType.MsgSourceTypeID
 INNER JOIN [LogRhythmEMDB].[dbo].[MPERuleRegex] MPERegex ON MPE.MPERuleRegexID = MPERegex.MPERuleRegexID
 --WHERE MSGSourceType.FullName like @LogSourceName
-GROUP BY MSGSourceType.FullName, Classification.[FullName], Classification.[Name], CommonEvent.[Name]
+GROUP BY MSGSourceType.FullName, Classification.[FullName], Classification.[Name]
 ORDER BY MSGSourceType.FullName, Classification.FullName ASC
 
 
@@ -47,14 +46,14 @@ https://github.com/lrchma/
 #>
 
 param(
-  [Parameter(Mandatory=$true)]
+  [Parameter(Mandatory=$false)]
   [string]$debugMode = "false",
 
   [Parameter(Mandatory=$false)]
   [string]$aieInputFile = "aie.csv",
 
   [Parameter(Mandatory=$false)]
-  [string]$mdiInputFile = "LogSource2MDI_2.csv"
+  [string]$mdiInputFile = "mdi.csv"
 )
 
 
@@ -69,32 +68,38 @@ Write-Debug "$(get-date) Init"
 Write-Debug "$(get-date) KB Version used for export: $kbVersion"
 Write-Debug "$(get-date) debugMode = $debugMode"
 
-Write-Debug "$(get-date) Importing AIE Rules"
-$csvAie = import-csv "C:\Users\Administrator\Documents\WindowsPowerShell\aie.csv"
 
-Write-Debug "$(get-date) Importing MDI Mapping"
-$csvMdi = import-csv "C:\Users\Administrator\Documents\WindowsPowerShell\LogSource2MDI_2.csv"
+$csvAie = import-csv $aieInputFile
+Write-Debug "$(get-date) Importing AIE Rules from $aieInputFile"
+
+$csvMdi = import-csv $mdiInputFile
+Write-Debug "$(get-date) Importing MDI Mapping from $mdiInputFile"
 
 
+#CSV Header
 write-output "LogSource,Classification,AIERuleID,AIERuleName,AIERuleGroup,AIERuleBlockNo"
 
-Write-Debug "$(get-date) Eval Matched Log Sources MDI to AIE Rules"
-     
-    #Store unique matching Classifications per log source
-    $matchingClassifications = @()
+    
+foreach($logSourceType in $($csvMdi | select LogSource | sort-object -Property LogSource -Unique)){
+          
+    $matchedLogSource = $logSourceType.LogSource
+    
+    Write-Debug "$(get-date) $($logSourceType.LogSource)"
 
-    foreach($logSourceType in $csvMdi){
-        $matchedLogSource = $logSourceType.LogSource
-
-        foreach ($classification in $csvMdi | Where-Object {$_.LogSource -eq $matchedLogSource})
+    foreach ($classification in $csvMdi | Where-Object {$_.LogSource -eq $($logSourceType.LogSource)})
         {
+
+            Write-Debug "$(get-date) $($logSourceType.LogSource) -> $($classification.ClassificationName)"
+
                 foreach($aierule in $csvAie){
                     
+                    #Write-Debug "$(get-date) aierule = $($aierule.AlarmRule)"
+
                     switch($classification.ClassificationName){
-                        "Authentication Success"{if($aierule.'Authentication Success' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
-                        "Authentication Failure"{if($aierule.'Authentication Failure' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
-                        "Access Success"{if($aierule.'Access Success' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
-                        "Access Failure"{if($aierule.'Access Failure' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
+                        "Authentication Success"{if($aierule.'Authentication Success' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.RB_BlockID}}
+                        "Authentication Failure"{if($aierule.'Authentication Failure' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
+                        "Access Success"{if($aierule.'Access Success' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
+                        "Access Failure"{if($aierule.'Access Failure' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
                         "Account Created"{if($aierule.'Account Created' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
                         "Account Deleted"{if($aierule.'Account Deleted' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
                         "Other Audit Success"{if($aierule.'Other Audit Success' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
@@ -131,8 +136,10 @@ Write-Debug "$(get-date) Eval Matched Log Sources MDI to AIE Rules"
                         "Network Traffic"{if($aierule.'Network Traffic' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
                         "Other Operations"{if($aierule.'Other Operations' -eq 1){"{0}, {1}, {2}, {3}, {4}, {5}" -f $matchedLogSource, $classification.ClassificationName, $aierule.no, $aierule.AlarmRule, $aierule.AlarmKB, $aierule.rb_blockid}}
                     } 
-                } 
-            } 
+
+                }
+
         }
-    
+
+    }
     
